@@ -1,0 +1,171 @@
+@{
+    ViewData["Title"] = "홈";
+
+    var days = new[] { "평일", "주말" };
+
+    var matchRegions = new[]
+    {
+        "서울 북부",
+        "서울 남부",
+        "인천, 부천",
+        "경기 북부",
+        "경기 남부"
+    };
+
+    var stadiumRegions = new[]
+    {
+         "서울",
+         "인천, 부천",
+         "경기"
+    };
+
+    var times = new[]
+    {
+        "06:00~08:00",
+        "07:00~09:00",
+        "08:00~10:00",
+        "09:00~11:00",
+        "10:00~12:00",
+        "11:00~13:00",
+        "12:00~14:00",
+        "13:00~15:00",
+        "14:00~16:00",
+        "15:00~17:00",
+        "16:00~18:00",
+        "17:00~19:00",
+        "18:00~20:00",
+        "19:00~21:00",
+        "20:00~22:00",
+        "21:00~23:00"
+    };
+}
+
+<div class="home-board-layout">
+    <aside class="board-sidebar" aria-label="게시판 메뉴">
+
+        <div class="my-info-box">
+            <div class="my-info-title">내 정보</div>
+
+            <div class="my-info-row">
+                <span>닉네임</span>
+                <strong>홍길동</strong>
+            </div>
+
+            <div class="my-info-row">
+                <span>지역</span>
+                <strong>서울</strong>
+            </div>
+
+            <div class="my-info-row">
+                <span>포지션</span>
+                <strong>FW</strong>
+            </div>
+
+            <a href="#" class="my-info-edit">내 정보 수정</a>
+        </div>
+
+        <nav aria-label="게시판 메뉴">
+
+            <a href="#">▣ 공지사항</a>
+
+            <details>
+                <summary>▣ 축구 매치</summary>
+
+                @foreach (var day in days)
+                {
+                    <details class="board-sub-details">
+                        <summary>@day</summary>
+
+                        <div class="board-region-list">
+                            @foreach (var region in matchRegions)
+                            {
+                                <details class="board-region-details">
+                                    <summary>@region</summary>
+
+                                    <div class="board-sub-menu">
+                                        @foreach (var time in times)
+                                        {
+                                            <a href="#">@time</a>
+                                        }
+                                    </div>
+                                </details>
+                            }
+                        </div>
+                    </details>
+                }
+            </details>
+
+            <details>
+                <summary>▣ 구장 양도</summary>
+
+                @foreach (var day in days)
+                {
+                    <details class="board-sub-details">
+                        <summary>@day</summary>
+
+                        <div class="board-region-list">
+                            <div class="board-sub-menu stadium-region-menu">
+                                @foreach (var region in stadiumRegions)
+                                {
+                                    <a href="#">@region</a>
+                                }
+                            </div>
+                        </div>
+                    </details>
+                }
+            </details>
+
+            <details>
+                <summary>▣ 팀원 구함</summary>
+
+                <div class="board-region-list">
+                    <div class="board-sub-menu stadium-region-menu">
+                        @foreach (var region in matchRegions)
+                        {
+                            <a href="#">@region</a>
+                        }
+                    </div>
+                </div>
+            </details>
+
+        </nav>
+    </aside>
+
+    <section class="board-content" aria-label="게시판 콘텐츠">
+
+        <div class="notice-board">
+            <div class="notice-board-header">
+                <h2>공지사항</h2>
+                <a href="#">더보기</a>
+            </div>
+
+            <div class="notice-list">
+                <a href="#" class="notice-item">
+                    <span class="notice-title">사이트 이용 안내입니다.</span>
+                    <span class="notice-date">2026.06.22</span>
+                </a>
+
+                <a href="#" class="notice-item">
+                    <span class="notice-title">축구 매치 게시판 이용 규칙 안내</span>
+                    <span class="notice-date">2026.06.21</span>
+                </a>
+
+                <a href="#" class="notice-item">
+                    <span class="notice-title">구장 양도 게시글 작성 시 주의사항</span>
+                    <span class="notice-date">2026.06.20</span>
+                </a>
+
+                <a href="#" class="notice-item">
+                    <span class="notice-title">팀원 구함 게시판 이용 방법</span>
+                    <span class="notice-date">2026.06.19</span>
+                </a>
+
+                <a href="#" class="notice-item">
+                    <span class="notice-title">허위 게시글 신고 안내</span>
+                    <span class="notice-date">2026.06.18</span>
+                </a>
+            </div>
+        </div>
+
+    </section>
+</div>
