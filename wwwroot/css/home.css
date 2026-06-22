@@ -1,0 +1,26 @@
+﻿.home-board-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.board-content {
+    min-height: 420px;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    padding: 18px;
+}
+
+@media (max-width: 767.98px) {
+    .home-board-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .board-content {
+        min-height: 0;
+    }
+}

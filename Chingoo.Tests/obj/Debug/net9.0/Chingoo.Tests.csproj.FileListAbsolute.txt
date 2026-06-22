@@ -412,3 +412,5 @@ C:\Users\211119\Desktop\Chingoo\Chingoo\Chingoo.Tests\obj\Debug\net9.0\refint\Ch
 C:\Users\211119\Desktop\Chingoo\Chingoo\Chingoo.Tests\obj\Debug\net9.0\Chingoo.Tests.pdb
 C:\Users\211119\Desktop\Chingoo\Chingoo\Chingoo.Tests\obj\Debug\net9.0\Chingoo.Tests.genruntimeconfig.cache
 C:\Users\211119\Desktop\Chingoo\Chingoo\Chingoo.Tests\obj\Debug\net9.0\ref\Chingoo.Tests.dll
+C:\Users\211119\Desktop\Chingoo\Chingoo\Chingoo.Tests\bin\Debug\net9.0\Chingoo.exe
+C:\Users\211119\Desktop\Chingoo\Chingoo\Chingoo.Tests\obj\Debug\net9.0\Chingoo.Tests.sourcelink.json

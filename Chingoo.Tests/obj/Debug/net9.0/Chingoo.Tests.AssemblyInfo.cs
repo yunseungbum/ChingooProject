@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Chingoo.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e59bb0692d9b076d4f88e293c9e156107615483")]
 [assembly: System.Reflection.AssemblyProductAttribute("Chingoo.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Chingoo.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

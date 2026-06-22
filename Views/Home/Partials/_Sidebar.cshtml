@@ -1,0 +1,91 @@
+﻿@model Chingoo.ViewModels.BoardMenuViewModel
+
+<aside class="board-sidebar" aria-label="게시판 메뉴">
+
+    <div class="my-info-box">
+        <div class="my-info-title">내 정보</div>
+
+        <div class="my-info-row">
+            <span>닉네임</span>
+            <strong>홍길동</strong>
+        </div>
+
+        <div class="my-info-row">
+            <span>지역</span>
+            <strong>서울</strong>
+        </div>
+
+        <div class="my-info-row">
+            <span>포지션</span>
+            <strong>FW</strong>
+        </div>
+
+        <a href="#" class="my-info-edit">내 정보 수정</a>
+    </div>
+
+    <nav aria-label="게시판 메뉴">
+
+        <a href="#">▣ 공지사항</a>
+
+        <details>
+            <summary>▣ 축구 매치</summary>
+
+            @foreach (var day in Model.Days)
+            {
+                <details class="board-sub-details">
+                    <summary>@day</summary>
+
+                    <div class="board-region-list">
+                        @foreach (var region in Model.MatchRegions)
+                        {
+                            <details class="board-region-details">
+                                <summary>@region</summary>
+
+                                <div class="board-sub-menu">
+                                    @foreach (var time in Model.Times)
+                                    {
+                                        <a href="#">@time</a>
+                                    }
+                                </div>
+                            </details>
+                        }
+                    </div>
+                </details>
+            }
+        </details>
+
+        <details>
+            <summary>▣ 구장 양도</summary>
+
+            @foreach (var day in Model.Days)
+            {
+                <details class="board-sub-details">
+                    <summary>@day</summary>
+
+                    <div class="board-region-list">
+                        <div class="board-sub-menu stadium-region-menu">
+                            @foreach (var region in Model.StadiumRegions)
+                            {
+                                <a href="#">@region</a>
+                            }
+                        </div>
+                    </div>
+                </details>
+            }
+        </details>
+
+        <details>
+            <summary>▣ 팀원 구함</summary>
+
+            <div class="board-region-list">
+                <div class="board-sub-menu stadium-region-menu">
+                    @foreach (var region in Model.MatchRegions)
+                    {
+                        <a href="#">@region</a>
+                    }
+                </div>
+            </div>
+        </details>
+
+    </nav>
+</aside>

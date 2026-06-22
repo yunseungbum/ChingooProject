@@ -30,6 +30,8 @@ C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\Chingoo.pdb
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\Chingoo.genruntimeconfig.cache
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\ref\Chingoo.dll
 C:\Users\211119\Desktop\Chingoo\Chingoo\bin\Debug\net9.0\Chingoo.exe
+C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\Chingoo.sourcelink.json
+C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\hl90kappil-61n19gt1b8.gz
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\vwj3okcgrq-xtxxf3hu2r.gz
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\ucnur5lxak-bqjiyaj88i.gz
@@ -91,8 +93,9 @@ C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\tv4as7fb16-2
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\loisfz0bbf-muycvpuwrr.gz
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\h5ujhshp9c-87fc7y1x7t.gz
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\i2fad8871v-mlv21k5csn.gz
+C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\2i0dyxktj1-me5zaoimy3.gz
+C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\kh6ryorr42-me5zaoimy3.gz
 C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
-C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\iiq0elrfpe-2ly5ceez50.gz
-C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\2i0dyxktj1-pi81gcpvlo.gz
-C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\kh6ryorr42-pi81gcpvlo.gz
+C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\ao7ghmgev0-xdhnhk5e21.gz
+C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\y3aefafmzy-u6ng8ylrdt.gz
+C:\Users\211119\Desktop\Chingoo\Chingoo\obj\Debug\net9.0\compressed\2u1rgf99pm-ixzy6rpdhk.gz
