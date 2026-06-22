@@ -1,25 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ChingooProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\211119\\desktop\\chingoo\\chingoo\\views\\home\\partials\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\chingoo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:chingoo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\home\\partials\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:views\\home\\partials\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\211119\\desktop\\chingoo\\chingoo\\views\\home\\partials\\_noticeboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\home\\partials\\_noticeboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:views\\home\\partials\\_noticeboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\211119\\desktop\\chingoo\\chingoo\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\211119\\desktop\\chingoo\\chingoo\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\211119\\desktop\\chingoo\\chingoo\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -30,19 +50,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Chingoo",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Chingoo.csproj",
+              "RelativeDocumentMoniker": "Chingoo.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Chingoo.csproj",
+              "RelativeToolTip": "Chingoo.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-22T13:53:25.915Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:45:57.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAzwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:38:06.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:37:27.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-22T11:32:15.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "_NoticeBoard.cshtml",
-              "DocumentMoniker": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\Home\\Partials\\_NoticeBoard.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Home\\Partials\\_NoticeBoard.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Partials\\_NoticeBoard.cshtml",
-              "ToolTip": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\Home\\Partials\\_NoticeBoard.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Home\\Partials\\_NoticeBoard.cshtml",
               "RelativeToolTip": "Views\\Home\\Partials\\_NoticeBoard.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -51,24 +136,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "_Sidebar.cshtml",
-              "DocumentMoniker": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\Home\\Partials\\_Sidebar.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Home\\Partials\\_Sidebar.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Partials\\_Sidebar.cshtml",
-              "ToolTip": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\Home\\Partials\\_Sidebar.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Home\\Partials\\_Sidebar.cshtml",
               "RelativeToolTip": "Views\\Home\\Partials\\_Sidebar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-22T07:35:51.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -77,11 +162,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\_ViewStart.cshtml",
               "RelativeToolTip": "Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -90,15 +175,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\211119\\Desktop\\Chingoo\\Chingoo\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-22T04:59:10.441Z"
+              "WhenOpened": "2026-06-22T04:59:10.441Z",
+              "EditorCaption": ""
             }
           ]
         }

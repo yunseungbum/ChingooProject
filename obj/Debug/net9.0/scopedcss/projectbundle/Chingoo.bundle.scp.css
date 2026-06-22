@@ -1,4 +1,4 @@
-/* _content/Chingoo/Views/Home/Index.cshtml.rz.scp.css */
+/* /Views/Home/Index.cshtml.rz.scp.css */
 .home-board-layout[b-tbustkmyx2] {
     display: grid;
     grid-template-columns: 220px minmax(0, 1fr);
@@ -344,7 +344,7 @@
     color: #9ca3af;
     font-size: 0.84rem;
 }
-/* _content/Chingoo/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* /Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
