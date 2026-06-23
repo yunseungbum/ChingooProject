@@ -2,6 +2,8 @@ using System.Diagnostics;
 using Chingoo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Chingoo.ViewModels;
+using System.Security.Claims;
+using Chingoo.Data;
 
 namespace Chingoo.Controllers
 {
@@ -9,8 +11,10 @@ namespace Chingoo.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly AppDbContext _db;
+        public HomeController(AppDbContext db, ILogger<HomeController> logger)
         {
+            _db = db;
             _logger = logger;
         }
 
@@ -63,6 +67,22 @@ namespace Chingoo.Controllers
                     }
                 }
             };
+
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+                var user = _db.Users.FirstOrDefault(x => x.Id == int.Parse(userId));
+
+                model.BoardMenu.IsLogin = true;
+                model.BoardMenu.NickName = user.TeamName;
+                model.BoardMenu.Region = user.Region;
+                model.BoardMenu.SoccerTemperature = user.SoccerTemperature;
+            }
+            else
+            {
+                model.BoardMenu.IsLogin = false;
+            }
 
             return View(model);
         }

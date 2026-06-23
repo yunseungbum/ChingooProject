@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/notice.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Chingoo.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -18,7 +19,25 @@
             <div class="container-fluid">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">Chingoo</a>
                 <div class="ms-auto">
-                    <a class="btn btn-outline-primary" asp-controller="Account" asp-action="Login">로그인</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                      <a asp-controller="Account" asp-action="MyPage" class="nav-link-custom">내정보</a>
+
+                      <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                            <button type="submit" class="nav-link-custom">
+                                로그아웃
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-primary"
+                           asp-controller="Account"
+                           asp-action="Login">
+                            로그인
+                        </a>
+                    }
                 </div>
             </div>
         </nav>
@@ -38,3 +57,10 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+@if (TempData["Message"] != null)
+{
+        <script>
+                alert('@Html.Raw(TempData["Message"])');
+        </script>
+}

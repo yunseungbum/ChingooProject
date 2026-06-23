@@ -1,0 +1,74 @@
+﻿.account-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7fa;
+    padding: 30px 15px;
+}
+
+.account-card {
+    width: 100%;
+    max-width: 360px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+    .account-card h2 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 24px;
+    }
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+    height: 40px;
+    font-size: 14px;
+}
+
+.input-group .btn {
+    width: 82px;
+    font-size: 13px;
+}
+
+.btn-success {
+    height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.text-danger,
+#checkIdResult {
+    font-size: 12px;
+}
+.nav-link-custom {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+    /* hover 효과 */
+    .nav-link-custom:hover {
+        color: #0d6efd;
+        background-color: rgba(13, 110, 253, 0.08);
+        border-radius: 6px;
+    }
+
+/* 버튼 기본 스타일 제거 */
+button.nav-link-custom {
+    font-family: inherit;
+}

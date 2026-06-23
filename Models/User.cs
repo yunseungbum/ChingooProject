@@ -23,7 +23,7 @@ namespace Chingoo.Models
         [StringLength(50)]
         public string Region { get; set; } = string.Empty;
 
-        public decimal SoccerTemperature { get; set; } = 36.0m;
+        public int SoccerTemperature { get; set; } = 36;
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
