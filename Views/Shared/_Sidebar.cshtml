@@ -1,0 +1,86 @@
+﻿<nav aria-label="게시판 메뉴">
+
+    <a href="#">▣ 공지사항</a>
+
+    <!-- 축구 매치 -->
+    <details>
+        <summary>▣ 축구 매치</summary>
+
+        @foreach (var day in Model.Days)
+        {
+                <details>
+                    <summary>@day</summary>
+
+                    <div class="board-region-list">
+                    @foreach (var region in Model.MatchRegions)
+                    {
+                                <a asp-controller="Post"
+                                   asp-action="Index"
+                                   asp-route-boardType="Match"
+                                   asp-route-day="@day"
+                                   asp-route-region="@region">
+                            @region
+                                </a>
+                    }
+                    </div>
+
+                </details>
+        }
+
+    </details>
+
+    <!-- 용병 모집 -->
+    <details>
+        <summary>▣ 용병 모집</summary>
+
+        @foreach (var day in Model.Days)
+        {
+                <details>
+                    <summary>@day</summary>
+
+                    <div class="board-region-list">
+                    @foreach (var region in Model.MatchRegions)
+                    {
+                                <a asp-controller="Post"
+                                   asp-action="Index"
+                                   asp-route-boardType="Mercenary"
+                                   asp-route-day="@day"
+                                   asp-route-region="@region">
+                            @region
+                                </a>
+                    }
+                    </div>
+
+                </details>
+        }
+
+    </details>
+
+    <!-- 팀원 모집 -->
+    <details>
+        <summary>▣ 팀원 모집</summary>
+
+        @foreach (var day in Model.Days)
+        {
+                <details>
+                    <summary>@day</summary>
+
+                    <div class="board-region-list">
+                    @foreach (var region in Model.MatchRegions)
+                    {
+                                <a asp-controller="Post"
+                                   asp-action="Index"
+                                   asp-route-boardType="TeamRecruit"
+                                   asp-route-day="@day"
+                                   asp-route-region="@region">
+                            @region
+                                </a>
+                    }
+                    </div>
+
+                </details>
+        }
+
+    </details>
+
+</nav>

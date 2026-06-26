@@ -122,7 +122,6 @@ C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\Chingoo.MvcApplicationPart
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\Chingoo.RazorAssemblyInfo.cache
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\Chingoo.RazorAssemblyInfo.cs
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\Chingoo.sourcelink.json
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\scopedcss\bundle\Chingoo.styles.css
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\scopedcss\projectbundle\Chingoo.bundle.scp.css
@@ -230,7 +229,6 @@ C:\Users\user\Desktop\ChingooProject\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnal
 C:\Users\user\Desktop\ChingooProject\bin\Debug\net9.0\System.Text.Json.dll
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ao7ghmgev0-xdhnhk5e21.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2u1rgf99pm-ixzy6rpdhk.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\y3aefafmzy-u6ng8ylrdt.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\hl90kappil-61n19gt1b8.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\vwj3okcgrq-xtxxf3hu2r.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ucnur5lxak-t1cqhe9u97.gz
@@ -292,8 +290,6 @@ C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\tv4as7fb16-jjsu
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\loisfz0bbf-9vr69e8ynj.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\h5ujhshp9c-87fc7y1x7t.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\i2fad8871v-mlv21k5csn.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2i0dyxktj1-me5zaoimy3.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\kh6ryorr42-me5zaoimy3.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.Chingoo.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.Chingoo.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.build.Chingoo.props
@@ -301,5 +297,9 @@ C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.bu
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Chingoo.props
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets.pack.json
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\qkyxcqx2p8-59ngf6vusl.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\iiq0elrfpe-b4xokf7ib6.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\qkyxcqx2p8-im765bdrl4.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2i0dyxktj1-me5zaoimy3.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\kh6ryorr42-me5zaoimy3.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\y3aefafmzy-yhto9opm1x.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\iiq0elrfpe-dx2sxt9xuc.gz

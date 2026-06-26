@@ -6,10 +6,26 @@
 
 <div class="home-board-layout">
 
-    @await Html.PartialAsync("Partials/_Sidebar", Model.BoardMenu)
+    <section class="board-content" aria-label="공지사항">
 
-    <section class="board-content" aria-label="게시판 콘텐츠">
-        @await Html.PartialAsync("Partials/_NoticeBoard")
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">📢 공지사항</h4>
+
+                <a asp-controller="Notice"
+                   asp-action="Index"
+                   class="btn btn-outline-primary btn-sm">
+                    전체보기
+                </a>
+            </div>
+
+            <div class="card-body p-0">
+                @await Html.PartialAsync("Partials/_NoticeBoard")
+            </div>
+
+        </div>
+
     </section>
-</div>
 
+</div>

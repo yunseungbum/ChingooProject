@@ -1,0 +1,122 @@
+﻿@model List<Chingoo.Models.Post>
+
+<h2 class="mb-3">게시글 목록</h2>
+
+<!-- 🔥 필터 영역 -->
+<div class="card mb-3 p-3">
+
+    <form method="get" asp-action="Index" class="row g-2 align-items-end">
+
+        <input type="hidden" name="boardType" value="@ViewBag.BoardType" />
+
+        <!-- 게시판 -->
+        <div class="col-md-2">
+            <label class="form-label">게시판</label>
+            <input type="text"
+                   class="form-control"
+                   value="@ViewBag.BoardType"
+                   disabled  />
+        </div>
+
+        <!-- 평일 / 주말 -->
+        <div class="col-md-2">
+            <label class="form-label">평일 / 주말</label>
+            <select name="day" class="form-select">
+                <option value="">전체</option>
+                <option value="평일">평일</option>
+                <option value="주말">주말</option>
+            </select>
+        </div>
+
+        <!-- 지역 -->
+        <div class="col-md-2">
+            <label class="form-label">지역</label>
+            <select name="region" class="form-select">
+                <option value="">전체 지역</option>
+                <option value="서울 북부">서울 북부</option>
+                <option value="서울 남부">서울 남부</option>
+                <option value="인천, 부천">인천, 부천</option>
+                <option value="경기 북부">경기 북부</option>
+                <option value="경기 남부">경기 남부</option>
+            </select>
+        </div>
+          <!-- 시간 -->
+         <div class="col-md-2">
+            <label class="form-label">시간</label>
+            <select name="time" class="form-select">
+                <option value="">전체 시간</option>
+                <option value="06:00~08:00">06:00~08:00</option>
+                <option value="07:00~09:00">07:00~09:00</option>
+                <option value="08:00~10:00">08:00~10:00</option>
+                <option value="09:00~11:00">09:00~11:00</option>
+                <option value="10:00~12:00">10:00~12:00</option>
+                <option value="11:00~13:00">11:00~13:00</option>
+                <option value="12:00~14:00">12:00~14:00</option>
+                <option value="13:00~15:00">13:00~15:00</option>
+                <option value="14:00~16:00">14:00~16:00</option>
+                <option value="15:00~17:00">15:00~17:00</option>
+                <option value="16:00~18:00">16:00~18:00</option>
+                <option value="17:00~19:00">17:00~19:00</option>
+                <option value="18:00~20:00">18:00~20:00</option>
+                <option value="19:00~21:00">19:00~21:00</option>
+                <option value="20:00~22:00">20:00~22:00</option>
+                <option value="21:00~23:00">21:00~23:00</option>
+            </select>
+        </div>
+
+
+        <!-- 검색 버튼 -->
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">
+                검색
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+<!-- 🔥 게시글 목록 -->
+@if (!Model.Any())
+{
+        <p class="text-muted">등록된 게시글이 없습니다.</p>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <a asp-controller="Post"asp-action="Details"asp-route-id="@item.Id"class="text-decoration-none text-dark">
+
+            <div class="card mb-3 shadow-sm">
+
+                <div class="card-body">
+
+                    <h5 class="fw-bold mb-2">
+                        @item.Title
+                    </h5>
+
+                    <div class="d-flex justify-content-between text-muted small">
+
+                        <div>
+                            작성자: <strong>@item.User.TeamName</strong>
+                            |
+                            날짜: @item.DayType
+                            |
+                            시간: @item.TimeSlot
+                            |
+                            장소: @item.Region
+                        </div>
+
+                        <div>
+                            @item.CreatedAt.ToString("yyyy-MM-dd")
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+    }
+}

@@ -1,33 +1,71 @@
+@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+
+    // Sidebar 숨길 페이지
+    bool hideSidebar =
+        controller == "Account" &&
+        (action == "Login" || action == "Register");
+}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Chingoo</title>
-    <script type="importmap"></script>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/notice.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Chingoo.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Chingoo</a>
-                <div class="ms-auto">
+
+<header>
+    <nav class="navbar navbar-light bg-white border-bottom box-shadow">
+        <div class="container d-flex align-items-center">
+
+                @if (!hideSidebar)
+                {
+                    <button class="btn btn-outline-secondary d-md-none me-2"
+                            type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#sidebarMenu"
+                            aria-controls="sidebarMenu">
+                        ☰
+                    </button>
+                }
+
+            <a class="navbar-brand ms-2"
+               asp-controller="Home"
+               asp-action="Index">
+                Chingoo
+            </a>
+
+            <div class="ms-auto">
+
                     @if (User.Identity.IsAuthenticated)
                     {
+                        <a asp-controller="Account"
+                           asp-action="MyPage"
+                           class="nav-link-custom">
+                            내정보
+                        </a>
 
-                      <a asp-controller="Account" asp-action="MyPage" class="nav-link-custom">내정보</a>
+                        <form asp-controller="Account"
+                              asp-action="Logout"
+                              method="post"
+                              class="d-inline">
 
-                      <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                            <button type="submit" class="nav-link-custom">
+                            <button type="submit"
+                                    class="nav-link-custom">
                                 로그아웃
                             </button>
+
                         </form>
                     }
                     else
@@ -38,29 +76,74 @@
                             로그인
                         </a>
                     }
-                </div>
+
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
+
+        </div>
+    </nav>
+</header>
+
+<!-- ================= MAIN WRAPPER ================= -->
+<div class="container mt-3">
+
+    <div class="layout-wrapper">
+
+            @if (!hideSidebar)
+            {
+            <aside class="sidebar-area d-none d-md-block">
+                        @await Component.InvokeAsync("Sidebar")
+            </aside>
+            }
+
+        <main class="content-area px-4">
+                @RenderBody()
         </main>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">&copy; 2026 - Chingoo</div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+</div>
+
+<footer class="border-top footer text-muted mt-4">
+    <div class="container">
+        &copy; 2026 - Chingoo
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
+    @if (TempData["Message"] != null)
+    {
+        <script>
+            alert('@Html.Raw(TempData["Message"])');
+        </script>
+    }
+    @if (!hideSidebar)
+    {
+        <div class="offcanvas offcanvas-start"
+             tabindex="-1"
+             id="sidebarMenu"
+             aria-labelledby="sidebarMenuLabel">
+
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="sidebarMenuLabel">
+                    메뉴
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="닫기">
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+                @await Component.InvokeAsync("Sidebar")
+            </div>
+        </div>
+    }
 </body>
 </html>
-
-@if (TempData["Message"] != null)
-{
-        <script>
-                alert('@Html.Raw(TempData["Message"])');
-        </script>
-}

@@ -1,0 +1,109 @@
+﻿@model Chingoo.ViewModels.PostCreateViewModel
+
+@{
+    ViewData["Title"] = "게시글 작성";
+}
+
+    <form asp-action="Create" method="post">
+    <!-- 게시판 -->
+    <div class="mb-3">
+        <label asp-for="BoardType" class="form-label">게시판</label>
+
+        <select asp-for="BoardType" class="form-select">
+            <option value="">게시판을 선택하세요.</option>
+            <option value="축구 매치">축구 매치</option>
+            <option value="용병 모집">용병 모집</option>
+            <option value="팀원 모집">팀원 모집</option>
+        </select>
+
+        <span asp-validation-for="BoardType" class="text-danger"></span>
+    </div>
+
+    <!-- 평일 / 주말 -->
+    <div class="mb-3">
+        <label asp-for="DayType" class="form-label">평일 / 주말</label>
+
+        <select asp-for="DayType" class="form-select">
+            <option value="">선택하세요.</option>
+
+                @foreach (var day in Model.Days)
+                {
+                    <option value="@day">@day</option>
+                }
+        </select>
+
+        <span asp-validation-for="DayType" class="text-danger"></span>
+    </div>
+
+    <!-- 지역 -->
+    <div class="mb-3">
+        <label asp-for="Region" class="form-label">지역</label>
+
+        <select asp-for="Region" class="form-select">
+            <option value="">지역을 선택하세요.</option>
+
+            @foreach (var region in Model.Regions)
+            {
+                        <option value="@region">@region</option>
+            }
+        </select>
+
+        <span asp-validation-for="Region" class="text-danger"></span>
+    </div>
+
+    <!-- 경기 날짜 -->
+    <div class="mb-3">
+        <label asp-for="MatchDate" class="form-label">경기 날짜</label>
+
+        <input asp-for="MatchDate" type="date" class="form-control" />
+
+        <span asp-validation-for="MatchDate" class="text-danger"></span>
+    </div>
+
+    <!-- 시간 -->
+    <div class="mb-3">
+        <label asp-for="TimeSlot" class="form-label">시간</label>
+
+        <select asp-for="TimeSlot" class="form-select">
+            <option value="">시간을 선택하세요.</option>
+
+            @foreach (var time in Model.Times)
+            {
+                        <option value="@time">@time</option>
+            }
+        </select>
+
+        <span asp-validation-for="TimeSlot" class="text-danger"></span>
+    </div>
+
+       <!-- 제목 -->
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">제목</label>
+
+        <input asp-for="Title" class="form-control" placeholder="제목을 입력하세요." />
+
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <!-- 내용 -->
+    <div class="mb-3">
+        <label asp-for="Content" class="form-label">내용</label>
+
+        <textarea asp-for="Content" class="form-control" style="height: 300px;" placeholder="내용을 입력하세요."></textarea>
+
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+
+    <!-- 등록 버튼 -->
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">
+            게시글 등록
+        </button>
+    </div>
+
+
+</form>
+
+@section Scripts {
+            <partial name="_ValidationScriptsPartial" />
+}

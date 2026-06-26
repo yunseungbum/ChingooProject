@@ -1,0 +1,28 @@
+﻿@model Chingoo.Models.Post
+
+<div class="card shadow-sm post-card">
+
+    <div class="card-body">
+
+        <h3 class="mb-3">@Model.Title</h3>
+
+        <div class="text-muted small mb-3">
+            작성자: <strong>@Model.User.TeamName</strong> |
+            날짜: @Model.DayType |
+            시간: @Model.TimeSlot |
+            장소: @Model.Region
+        </div>
+
+        <hr />
+
+        <div class="mt-3 post-content">
+            @Model.Content
+        </div>
+
+        <div class="text-end text-muted small mt-4">
+            @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")
+        </div>
+
+    </div>
+
+</div>

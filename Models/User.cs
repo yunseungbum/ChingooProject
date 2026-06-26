@@ -26,6 +26,9 @@ namespace Chingoo.Models
         public int SoccerTemperature { get; set; } = 36;
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        //게시글
+        public ICollection<Post> Posts { get; set; } = new List<Post>();
     }
 }
 //[Required] = 반드시 값이 있어야 함

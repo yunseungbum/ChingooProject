@@ -1,9 +1,10 @@
-using System.Diagnostics;
+ï»¿using System.Diagnostics;
 using Chingoo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Chingoo.ViewModels;
 using System.Security.Claims;
 using Chingoo.Data;
+using Chingoo.Common;
 
 namespace Chingoo.Controllers
 {
@@ -24,66 +25,30 @@ namespace Chingoo.Controllers
             {
                 BoardMenu = new BoardMenuViewModel
                 {
-                    Days = new[]
-                    {
-                        "ÆòÀÏ",
-                        "ÁÖ¸»"
-                    },
-
-                    MatchRegions = new[]
-                    {
-                        "¼­¿ï ºÏºÎ",
-                        "¼­¿ï ³²ºÎ",
-                        "ÀÎÃµ, ºÎÃµ",
-                        "°æ±â ºÏºÎ",
-                        "°æ±â ³²ºÎ"
-                    },
-
-                    StadiumRegions = new[]
-                    {
-                        "¼­¿ï",
-                        "ÀÎÃµ, ºÎÃµ",
-                        "°æ±â"
-                    },
-
-                    Times = new[]
-                    {
-                        "06:00~08:00",
-                        "07:00~09:00",
-                        "08:00~10:00",
-                        "09:00~11:00",
-                        "10:00~12:00",
-                        "11:00~13:00",
-                        "12:00~14:00",
-                        "13:00~15:00",
-                        "14:00~16:00",
-                        "15:00~17:00",
-                        "16:00~18:00",
-                        "17:00~19:00",
-                        "18:00~20:00",
-                        "19:00~21:00",
-                        "20:00~22:00",
-                        "21:00~23:00"
-                    }
+                    Days = BoardOptions.Days,
+                    MatchRegions = BoardOptions.Regions,
+                    StadiumRegions = new[] { "ì„œìš¸", "ì¸ì²œ, ë¶€ì²œ", "ê²½ê¸°" },
+                    Times = BoardOptions.Times
                 }
             };
 
             if (User.Identity.IsAuthenticated)
             {
-                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userIdValue = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-                var user = _db.Users.FirstOrDefault(x => x.Id == int.Parse(userId));
+                if (int.TryParse(userIdValue, out int userId))
+                {
+                    var user = _db.Users.FirstOrDefault(x => x.Id == userId);
 
-                model.BoardMenu.IsLogin = true;
-                model.BoardMenu.NickName = user.TeamName;
-                model.BoardMenu.Region = user.Region;
-                model.BoardMenu.SoccerTemperature = user.SoccerTemperature;
+                    if (user != null)
+                    {
+                        model.BoardMenu.IsLogin = true;
+                        model.BoardMenu.NickName = user.TeamName;
+                        model.BoardMenu.Region = user.Region;
+                        model.BoardMenu.SoccerTemperature = user.SoccerTemperature;
+                    }
+                }
             }
-            else
-            {
-                model.BoardMenu.IsLogin = false;
-            }
-
             return View(model);
         }
 
