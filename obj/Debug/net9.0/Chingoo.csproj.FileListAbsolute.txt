@@ -227,7 +227,6 @@ C:\Users\user\Desktop\ChingooProject\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.
 C:\Users\user\Desktop\ChingooProject\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\user\Desktop\ChingooProject\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\user\Desktop\ChingooProject\bin\Debug\net9.0\System.Text.Json.dll
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ao7ghmgev0-xdhnhk5e21.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2u1rgf99pm-ixzy6rpdhk.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\hl90kappil-61n19gt1b8.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\vwj3okcgrq-xtxxf3hu2r.gz
@@ -297,9 +296,11 @@ C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.bu
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Chingoo.props
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets.pack.json
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\qkyxcqx2p8-im765bdrl4.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2i0dyxktj1-me5zaoimy3.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\kh6ryorr42-me5zaoimy3.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\y3aefafmzy-yhto9opm1x.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\iiq0elrfpe-dx2sxt9xuc.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ao7ghmgev0-lfguykpbiy.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\iiq0elrfpe-eg59lvhhie.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\qkyxcqx2p8-o3v9cys0hx.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\xned2b1c8o-p4zsvpf082.gz

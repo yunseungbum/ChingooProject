@@ -72,3 +72,11 @@
 button.nav-link-custom {
     font-family: inherit;
 }
+
+.readonly-info:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-color: #ced4da;
+    opacity: 1;
+    cursor: not-allowed;
+}
