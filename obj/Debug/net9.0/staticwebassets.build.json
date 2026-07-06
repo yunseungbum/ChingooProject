@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3Go9ErQrwByH5MCV3GnhivEBCAgI8C4jr8DVdA6bdeA=",
+  "Hash": "NzPKeyo4JJS0Ln8GHs4K/0BVYyv5ZqK2cOEh8cL5+XY=",
   "Source": "Chingoo",
   "BasePath": "_content/Chingoo",
   "Mode": "Default",
@@ -668,12 +668,12 @@
       "OriginalItemSpec": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eg59lvhhie.gz",
+      "Identity": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eo5i9merbb.gz",
       "SourceId": "Chingoo",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Chingoo",
-      "RelativePath": "css/site#[.{fingerprint=eg59lvhhie}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=eo5i9merbb}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -682,8 +682,8 @@
       "RelatedAsset": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "pduzm15jz5",
-      "Integrity": "jQ7Zyt94ZxV86mPM0MAAG43MfJC/810zEVV+vpPyixk=",
+      "Fingerprint": "zrmrhusj4d",
+      "Integrity": "DxXzImAOgMMGnMqYGJcOEO9Y8pj2x5Qgaa9PxOUhgtc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\site.css"
@@ -1606,8 +1606,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "eg59lvhhie",
-      "Integrity": "IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc=",
+      "Fingerprint": "eo5i9merbb",
+      "Integrity": "Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2962,7 +2962,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3015,7 +3015,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3052,7 +3052,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3099,7 +3099,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3160,7 +3160,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3205,7 +3205,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3260,7 +3260,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3321,7 +3321,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3366,7 +3366,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3421,7 +3421,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3474,7 +3474,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3511,7 +3511,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 03:04:56 GMT"
+          "Value": "Mon, 06 Jul 2026 02:11:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4727,12 +4727,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eg59lvhhie.gz",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eo5i9merbb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.006578947368"
+          "Quality": "0.004464285714"
         }
       ],
       "ResponseHeaders": [
@@ -4742,15 +4742,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "151"
+          "Value": "223"
         },
         {
           "Name": "ETag",
-          "Value": "\"jQ7Zyt94ZxV86mPM0MAAG43MfJC/810zEVV+vpPyixk=\""
+          "Value": "\"DxXzImAOgMMGnMqYGJcOEO9Y8pj2x5Qgaa9PxOUhgtc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 07:57:39 GMT"
+          "Value": "Mon, 06 Jul 2026 01:43:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4770,13 +4770,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc=\""
+          "Value": "W/\"Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc="
+          "Value": "sha256-Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4="
         }
       ]
     },
@@ -4791,7 +4791,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "205"
+          "Value": "385"
         },
         {
           "Name": "Content-Type",
@@ -4799,11 +4799,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc=\""
+          "Value": "\"Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 07:57:39 GMT"
+          "Value": "Mon, 06 Jul 2026 01:43:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4813,13 +4813,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc="
+          "Value": "sha256-Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eg59lvhhie.gz",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eo5i9merbb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4828,7 +4828,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "151"
+          "Value": "223"
         },
         {
           "Name": "Content-Type",
@@ -4836,11 +4836,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jQ7Zyt94ZxV86mPM0MAAG43MfJC/810zEVV+vpPyixk=\""
+          "Value": "\"DxXzImAOgMMGnMqYGJcOEO9Y8pj2x5Qgaa9PxOUhgtc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 07:57:39 GMT"
+          "Value": "Mon, 06 Jul 2026 01:43:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4858,18 +4858,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jQ7Zyt94ZxV86mPM0MAAG43MfJC/810zEVV+vpPyixk="
+          "Value": "sha256-DxXzImAOgMMGnMqYGJcOEO9Y8pj2x5Qgaa9PxOUhgtc="
         }
       ]
     },
     {
-      "Route": "css/site.eg59lvhhie.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eg59lvhhie.gz",
+      "Route": "css/site.eo5i9merbb.css",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eo5i9merbb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.006578947368"
+          "Quality": "0.004464285714"
         }
       ],
       "ResponseHeaders": [
@@ -4879,15 +4879,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "151"
+          "Value": "223"
         },
         {
           "Name": "ETag",
-          "Value": "\"jQ7Zyt94ZxV86mPM0MAAG43MfJC/810zEVV+vpPyixk=\""
+          "Value": "\"DxXzImAOgMMGnMqYGJcOEO9Y8pj2x5Qgaa9PxOUhgtc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 07:57:39 GMT"
+          "Value": "Mon, 06 Jul 2026 01:43:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4907,13 +4907,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc=\""
+          "Value": "W/\"Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eg59lvhhie"
+          "Value": "eo5i9merbb"
         },
         {
           "Name": "label",
@@ -4921,12 +4921,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc="
+          "Value": "sha256-Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4="
         }
       ]
     },
     {
-      "Route": "css/site.eg59lvhhie.css",
+      "Route": "css/site.eo5i9merbb.css",
       "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4936,7 +4936,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "205"
+          "Value": "385"
         },
         {
           "Name": "Content-Type",
@@ -4944,11 +4944,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc=\""
+          "Value": "\"Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 07:57:39 GMT"
+          "Value": "Mon, 06 Jul 2026 01:43:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4958,7 +4958,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eg59lvhhie"
+          "Value": "eo5i9merbb"
         },
         {
           "Name": "label",
@@ -4966,13 +4966,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-IhvJ3lbCH4WUfrcPkpZ+H0zdyC5nLgByA3qlxnO9eJc="
+          "Value": "sha256-Pk6YAg2+RfJtGs4+C5cR+ZSbRJt1YV8KhUnEt2Hh2S4="
         }
       ]
     },
     {
-      "Route": "css/site.eg59lvhhie.css.gz",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eg59lvhhie.gz",
+      "Route": "css/site.eo5i9merbb.css.gz",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\iiq0elrfpe-eo5i9merbb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4981,7 +4981,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "151"
+          "Value": "223"
         },
         {
           "Name": "Content-Type",
@@ -4989,11 +4989,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jQ7Zyt94ZxV86mPM0MAAG43MfJC/810zEVV+vpPyixk=\""
+          "Value": "\"DxXzImAOgMMGnMqYGJcOEO9Y8pj2x5Qgaa9PxOUhgtc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 26 Jun 2026 07:57:39 GMT"
+          "Value": "Mon, 06 Jul 2026 01:43:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5011,7 +5011,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eg59lvhhie"
+          "Value": "eo5i9merbb"
         },
         {
           "Name": "label",
@@ -5019,7 +5019,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-jQ7Zyt94ZxV86mPM0MAAG43MfJC/810zEVV+vpPyixk="
+          "Value": "sha256-DxXzImAOgMMGnMqYGJcOEO9Y8pj2x5Qgaa9PxOUhgtc="
         }
       ]
     },

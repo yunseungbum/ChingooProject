@@ -13,5 +13,7 @@ namespace Chingoo.Data
         public DbSet<User> Users { get; set; }
 
         public DbSet<Post> Posts => Set<Post>();
+
+        public DbSet<Notice> Notices => Set<Notice>();
     }
 }

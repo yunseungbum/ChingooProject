@@ -19,6 +19,17 @@ public class AccountController : Controller
         _db = db;
     }
 
+    public static IEnumerable<Claim> CreateUserClaims(User user)
+    {
+        return new List<Claim>
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Name, user.LoginId),
+            new Claim("TeamName", user.TeamName ?? ""),
+            new Claim("Region", user.Region ?? "")
+        };
+    }
+
     [HttpGet]
     public IActionResult Login() => View();
 
@@ -39,6 +50,8 @@ public class AccountController : Controller
             LoginId = model.LoginId,
             TeamName = model.TeamName,
             Email = model.Email,
+
+
             Password = model.Password,
             Region = model.Region,
             SoccerTemperature = 36,
@@ -93,12 +106,7 @@ public class AccountController : Controller
         }
 
         // 1. Claims 생성
-        var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.LoginId),
-            new Claim("TeamName", user.TeamName ?? "")
-        };
+        var claims = CreateUserClaims(user);
 
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
@@ -194,7 +202,7 @@ public class AccountController : Controller
         user.Email = model.Email;
         user.Region = model.Region;
 
-        if (!string.IsNullOrWhiteSpace(model.NewPassword) ||!string.IsNullOrWhiteSpace(model.CurrentPassword) || !string.IsNullOrWhiteSpace(model.ConfirmNewPassword))
+        if (!string.IsNullOrWhiteSpace(model.NewPassword) || !string.IsNullOrWhiteSpace(model.CurrentPassword) || !string.IsNullOrWhiteSpace(model.ConfirmNewPassword))
         {
             if (model.CurrentPassword != user.Password)
             {
@@ -207,6 +215,19 @@ public class AccountController : Controller
         }
 
         await _db.SaveChangesAsync();
+
+        var claims = CreateUserClaims(user);
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+
+        await HttpContext.SignInAsync(
+            CookieAuthenticationDefaults.AuthenticationScheme,
+            principal,
+            new AuthenticationProperties
+            {
+                IsPersistent = true,
+                ExpiresUtc = DateTime.UtcNow.AddHours(3)
+            });
 
         TempData["Message"] = "내정보가 수정되었습니다.";
 

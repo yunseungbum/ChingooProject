@@ -29,16 +29,16 @@ namespace Chingoo.ViewModels
 
         [DataType(DataType.Password)]
         [Display(Name = "현재 비밀번호")]
-        public string CurrentPassword { get; set; } = string.Empty;
+        public string? CurrentPassword { get; set; }
 
         [StringLength(100, MinimumLength = 5, ErrorMessage = "비밀번호는 5자 이상 입력해 주세요.")]
         [DataType(DataType.Password)]
         [Display(Name = "새 비밀번호")]
-        public string NewPassword { get; set; } = string.Empty;
+        public string? NewPassword { get; set; }
 
         [DataType(DataType.Password)]
         [Compare(nameof(NewPassword), ErrorMessage = "새 비밀번호가 일치하지 않습니다.")]
         [Display(Name = "새 비밀번호 확인")]
-        public string ConfirmNewPassword { get; set; } = string.Empty;
+        public string? ConfirmNewPassword { get; set; }
     }
 }
