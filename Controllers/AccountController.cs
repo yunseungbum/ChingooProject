@@ -66,6 +66,14 @@ public class AccountController : Controller
     [HttpGet]
     public IActionResult CheckLoginId(string loginId)
     {
+        if (string.IsNullOrWhiteSpace(loginId) || loginId.Length < 4 || loginId.Length > 30)
+        {
+            return Json(new
+            {
+                available = false,
+                message = "아이디는 4~30자로 입력해 주세요."
+            });
+        }
         bool exists = _db.Users.Any(u => u.LoginId == loginId);
 
         if (exists)

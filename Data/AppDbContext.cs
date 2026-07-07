@@ -15,5 +15,7 @@ namespace Chingoo.Data
         public DbSet<Post> Posts => Set<Post>();
 
         public DbSet<Notice> Notices => Set<Notice>();
+
+        public DbSet<PostComment> PostComments => Set<PostComment>();
     }
 }

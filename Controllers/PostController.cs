@@ -101,16 +101,71 @@ namespace Chingoo.Controllers
             return View(posts);
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Details(int id, string commentSort = "oldest")
         {
-            var post = _db.Posts.Include(x => x.User).FirstOrDefault(x => x.Id == id);
+            var post = _db.Posts
+                .Include(x => x.User)
+                .Include(x => x.Comments)
+                    .ThenInclude(x => x.User)
+                .Include(x => x.Comments)
+                    .ThenInclude(x => x.Replies)
+                        .ThenInclude(x => x.User)
+                .FirstOrDefault(x => x.Id == id);
 
             if (post == null)
             {
                 return NotFound();
             }
 
+            ViewBag.CommentSort = commentSort == "latest" ? "latest" : "oldest";
+
             return View(post);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateComment(int postId, string content, int? parentCommentId)
+        {
+            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (!int.TryParse(userIdValue, out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            if (string.IsNullOrWhiteSpace(content))
+            {
+                return RedirectToAction(nameof(Details), new { id = postId });
+            }
+
+            if (parentCommentId.HasValue)
+            {
+                var post = await _db.Posts.FirstOrDefaultAsync(x => x.Id == postId);
+
+                if (post == null)
+                {
+                    return NotFound();
+                }
+
+                if (post.UserId != userId)
+                {
+                    return Forbid();
+                }
+            }
+
+            var comment = new PostComment
+            {
+                PostId = postId,
+                UserId = userId,
+                Content = content,
+                ParentCommentId = parentCommentId,
+                CreatedAt = DateTime.Now
+            };
+
+            _db.PostComments.Add(comment);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { id = postId });
         }
     }
 }

@@ -101,6 +101,11 @@
                     return;
                 }
 
+                if (loginId.length < 4 || loginId.length > 30) {
+                    $("#checkIdResult").text("");
+                    return;
+                }
+
                 $.get("/Account/CheckLoginId",
                     { loginId: loginId },
                     function (result) {
