@@ -1,4 +1,18 @@
-﻿<div class="card shadow-sm post-card">
+@model Chingoo.Models.Notice
+
+@{
+    ViewData["Title"] = "공지사항 상세";
+
+    var commentSort = ViewBag.CommentSort as string ?? "oldest";
+    var allComments = ViewBag.Comments as List<Chingoo.Models.Comment> ?? new List<Chingoo.Models.Comment>();
+    var comments = allComments.Where(x => x.ParentCommentId == null);
+    comments = commentSort == "latest"
+        ? comments.OrderByDescending(x => x.CreatedAt)
+        : comments.OrderBy(x => x.CreatedAt);
+    var isNoticeAuthor = User.Identity?.Name == "admin";
+}
+
+<div class="card shadow-sm post-card">
 
     <div class="card-body">
 
@@ -10,14 +24,167 @@
 
         <hr />
 
-        <div class="mt-3 post-content" style="white-space: pre-wrap;">
+        <div class="mt-3 post-content">
             @Model.Content
         </div>
 
         <div class="text-end text-muted small mt-4">
-            @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")
+            @Model.CreatedAt.ToString("MM.dd HH:mm")
         </div>
 
     </div>
 
 </div>
+
+<section class="comment-panel">
+    <div class="comment-panel-header">
+        <div class="comment-sort">
+            <a asp-action="Details"
+               asp-route-id="@Model.Id"
+               asp-route-commentSort="oldest"
+               class="@(commentSort == "oldest" ? "active" : "")">
+                등록순
+            </a>
+
+            <a asp-action="Details"
+               asp-route-id="@Model.Id"
+               asp-route-commentSort="latest"
+               class="@(commentSort == "latest" ? "active" : "")">
+                최신순
+            </a>
+        </div>
+
+        <span class="comment-count">댓글 @allComments.Count(x => x.ParentCommentId == null)</span>
+    </div>
+
+    <div class="comment-list">
+        @foreach (var comment in comments)
+        {
+            var replyFormId = $"notice-reply-form-{comment.Id}";
+            var replies = commentSort == "latest"
+                ? comment.Replies.OrderByDescending(x => x.CreatedAt)
+                : comment.Replies.OrderBy(x => x.CreatedAt);
+
+            <article class="comment-item">
+                <div class="comment-body">
+                    <div class="comment-author-row">
+                        <strong>@comment.User.TeamName</strong>
+                        @if (comment.User.LoginId == "admin")
+                        {
+                            <span class="author-badge">작성자</span>
+                        }
+                        <span>@comment.CreatedAt.ToString("MM.dd HH:mm")</span>
+                    </div>
+
+                    <div class="comment-content">
+                        @comment.Content
+                    </div>
+
+                    @if (isNoticeAuthor)
+                    {
+                        <button type="button"
+                                class="comment-reply-toggle"
+                                data-reply-target="@replyFormId">
+                            답글
+                        </button>
+                    }
+
+                    @if (comment.Replies.Any())
+                    {
+                        <div class="reply-list">
+                            @foreach (var reply in replies)
+                            {
+                                <article class="comment-item reply-item">
+                                    <div class="comment-body">
+                                        <div class="comment-author-row">
+                                            <strong>@reply.User.TeamName</strong>
+                                            @if (reply.User.LoginId == "admin")
+                                            {
+                                                <span class="author-badge">작성자</span>
+                                            }
+                                            <span>@reply.CreatedAt.ToString("MM.dd HH:mm")</span>
+                                        </div>
+
+                                        <div class="comment-content">
+                                            @reply.Content
+                                        </div>
+                                    </div>
+                                </article>
+                            }
+                        </div>
+                    }
+
+                    @if (isNoticeAuthor)
+                    {
+                        <form asp-action="CreateComment"
+                              method="post"
+                              class="reply-form d-none"
+                              id="@replyFormId">
+                            @Html.AntiForgeryToken()
+
+                            <input type="hidden" name="noticeId" value="@Model.Id" />
+                            <input type="hidden" name="parentCommentId" value="@comment.Id" />
+
+                            <textarea name="content"
+                                      class="form-control"
+                                      rows="2"
+                                      placeholder="답글을 입력하세요."></textarea>
+
+                            <div class="comment-form-actions">
+                                <button type="submit" class="btn btn-outline-secondary btn-sm">답글 등록</button>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </article>
+        }
+
+        @if (!allComments.Any())
+        {
+            <div class="comment-empty">
+                아직 댓글이 없습니다.
+            </div>
+        }
+    </div>
+
+    @if (User.Identity?.IsAuthenticated ?? false)
+    {
+        <form asp-action="CreateComment" method="post" class="comment-form">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="noticeId" value="@Model.Id" />
+
+            <textarea name="content"
+                      class="form-control"
+                      rows="2"
+                      placeholder="댓글을 입력하세요."></textarea>
+
+            <div class="comment-form-actions">
+                <button type="submit" class="btn btn-primary btn-sm">댓글 등록</button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <div class="comment-empty">
+            댓글을 작성하려면 로그인이 필요합니다.
+        </div>
+    }
+</section>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll(".comment-reply-toggle").forEach((button) => {
+            button.addEventListener("click", () => {
+                const targetId = button.getAttribute("data-reply-target");
+                const form = document.getElementById(targetId);
+
+                if (!form) {
+                    return;
+                }
+
+                form.classList.toggle("d-none");
+            });
+        });
+    </script>
+}

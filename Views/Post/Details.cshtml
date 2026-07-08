@@ -4,7 +4,8 @@
     var commentSort = ViewBag.CommentSort as string ?? "oldest";
     var currentUserIdValue = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
     var isPostAuthor = int.TryParse(currentUserIdValue, out var currentUserId) && currentUserId == Model.UserId;
-    var comments = Model.Comments.Where(x => x.ParentCommentId == null);
+    var allComments = ViewBag.Comments as List<Chingoo.Models.Comment> ?? new List<Chingoo.Models.Comment>();
+    var comments = allComments.Where(x => x.ParentCommentId == null);
     comments = commentSort == "latest"
         ? comments.OrderByDescending(x => x.CreatedAt)
         : comments.OrderBy(x => x.CreatedAt);
@@ -55,7 +56,7 @@
             </a>
         </div>
 
-        <span class="comment-count">댓글 @Model.Comments.Count(x => x.ParentCommentId == null)</span>
+        <span class="comment-count">댓글 @allComments.Count(x => x.ParentCommentId == null)</span>
     </div>
 
     <div class="comment-list">
@@ -140,7 +141,7 @@
             </article>
         }
 
-        @if (!Model.Comments.Any())
+        @if (!allComments.Any())
         {
             <div class="comment-empty">
                 아직 댓글이 없습니다.

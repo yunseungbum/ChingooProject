@@ -6,5 +6,6 @@ namespace Chingoo.ViewModels
     {
         public BoardMenuViewModel BoardMenu { get; set; } = new();
         public List<Notice> Notices { get; set; } = new();
+        public List<CommunityPost> CommunityPosts { get; set; } = new();
     }
 }

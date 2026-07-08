@@ -1,4 +1,4 @@
-﻿using System.Security.Claims;
+using System.Security.Claims;
 using Chingoo.Common;
 using Chingoo.Data;
 using Chingoo.Models;
@@ -29,6 +29,7 @@ namespace Chingoo.Controllers
                 Regions = BoardOptions.Regions,
                 Times = BoardOptions.Times
             };
+
             return View(model);
         }
 
@@ -44,7 +45,6 @@ namespace Chingoo.Controllers
                 return View(model);
             }
 
-            //방어코드
             var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (string.IsNullOrEmpty(userIdValue))
@@ -105,11 +105,6 @@ namespace Chingoo.Controllers
         {
             var post = _db.Posts
                 .Include(x => x.User)
-                .Include(x => x.Comments)
-                    .ThenInclude(x => x.User)
-                .Include(x => x.Comments)
-                    .ThenInclude(x => x.Replies)
-                        .ThenInclude(x => x.User)
                 .FirstOrDefault(x => x.Id == id);
 
             if (post == null)
@@ -118,6 +113,12 @@ namespace Chingoo.Controllers
             }
 
             ViewBag.CommentSort = commentSort == "latest" ? "latest" : "oldest";
+            ViewBag.Comments = _db.Comments
+                .Include(x => x.User)
+                .Include(x => x.Replies)
+                    .ThenInclude(x => x.User)
+                .Where(x => x.BoardType == "Post" && x.BoardId == id)
+                .ToList();
 
             return View(post);
         }
@@ -138,31 +139,40 @@ namespace Chingoo.Controllers
                 return RedirectToAction(nameof(Details), new { id = postId });
             }
 
+            var post = await _db.Posts.FirstOrDefaultAsync(x => x.Id == postId);
+
+            if (post == null)
+            {
+                return NotFound();
+            }
+
             if (parentCommentId.HasValue)
             {
-                var post = await _db.Posts.FirstOrDefaultAsync(x => x.Id == postId);
-
-                if (post == null)
-                {
-                    return NotFound();
-                }
-
                 if (post.UserId != userId)
                 {
                     return Forbid();
                 }
+
+                var parentExists = await _db.Comments
+                    .AnyAsync(x => x.Id == parentCommentId.Value && x.BoardType == "Post" && x.BoardId == postId);
+
+                if (!parentExists)
+                {
+                    return NotFound();
+                }
             }
 
-            var comment = new PostComment
+            var comment = new Comment
             {
-                PostId = postId,
+                BoardType = "Post",
+                BoardId = postId,
                 UserId = userId,
                 Content = content,
                 ParentCommentId = parentCommentId,
                 CreatedAt = DateTime.Now
             };
 
-            _db.PostComments.Add(comment);
+            _db.Comments.Add(comment);
             await _db.SaveChangesAsync();
 
             return RedirectToAction(nameof(Details), new { id = postId });

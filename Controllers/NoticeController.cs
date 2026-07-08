@@ -1,4 +1,5 @@
-﻿using Chingoo.Data;
+using System.Security.Claims;
+using Chingoo.Data;
 using Chingoo.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace Chingoo.Controllers
             return View(notices);
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int id, string commentSort = "oldest")
         {
             var notice = await _db.Notices.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -33,7 +34,71 @@ namespace Chingoo.Controllers
                 return NotFound();
             }
 
+            ViewBag.CommentSort = commentSort == "latest" ? "latest" : "oldest";
+            ViewBag.Comments = await _db.Comments
+                .Include(x => x.User)
+                .Include(x => x.Replies)
+                    .ThenInclude(x => x.User)
+                .Where(x => x.BoardType == "Notice" && x.BoardId == id)
+                .ToListAsync();
+
             return View(notice);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateComment(int noticeId, string content, int? parentCommentId)
+        {
+            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (!int.TryParse(userIdValue, out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            if (string.IsNullOrWhiteSpace(content))
+            {
+                return RedirectToAction(nameof(Details), new { id = noticeId });
+            }
+
+            var noticeExists = await _db.Notices.AnyAsync(x => x.Id == noticeId);
+
+            if (!noticeExists)
+            {
+                return NotFound();
+            }
+
+            if (parentCommentId.HasValue)
+            {
+                if (User.Identity?.Name != "admin")
+                {
+                    return Forbid();
+                }
+
+                var parentExists = await _db.Comments
+                    .AnyAsync(x => x.Id == parentCommentId.Value && x.BoardType == "Notice" && x.BoardId == noticeId);
+
+                if (!parentExists)
+                {
+                    return NotFound();
+                }
+            }
+
+            var comment = new Comment
+            {
+                BoardType = "Notice",
+                BoardId = noticeId,
+                UserId = userId,
+                Content = content,
+                ParentCommentId = parentCommentId,
+                CreatedAt = DateTime.Now
+            };
+
+            _db.Comments.Add(comment);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { id = noticeId });
         }
 
         [Authorize]

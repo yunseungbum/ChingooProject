@@ -5,6 +5,7 @@ using Chingoo.ViewModels;
 using System.Security.Claims;
 using Chingoo.Data;
 using Chingoo.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chingoo.Controllers
 {
@@ -30,7 +31,8 @@ namespace Chingoo.Controllers
                     StadiumRegions = new[] { "서울", "인천, 부천", "경기" },
                     Times = BoardOptions.Times
                 },
-                Notices = _db.Notices.OrderByDescending(x => x.CreatedAt).Take(3).ToList()
+                Notices = _db.Notices.OrderByDescending(x => x.CreatedAt).Take(3).ToList(),
+                CommunityPosts = _db.CommunityPosts.OrderByDescending(x => x.CreatedAt).Take(5).ToList()
             };
 
             if (User.Identity.IsAuthenticated)

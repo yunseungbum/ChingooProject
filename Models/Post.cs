@@ -26,6 +26,5 @@ namespace Chingoo.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public ICollection<PostComment> Comments { get; set; } = new List<PostComment>();
     }
 }
