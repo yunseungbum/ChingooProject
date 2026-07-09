@@ -1,36 +1,31 @@
 using System.Security.Claims;
-using Chingoo.Data;
 using Chingoo.Models;
+using Chingoo.Services.Comments;
+using Chingoo.Services.Communities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Chingoo.Controllers
 {
     public class CommunityController : Controller
     {
-        private readonly AppDbContext _db;
+        private readonly ICommunityService _communityService;
+        private readonly ICommentService _commentService;
 
-        public CommunityController(AppDbContext db)
+        public CommunityController(ICommunityService communityService, ICommentService commentService)
         {
-            _db = db;
+            _communityService = communityService;
+            _commentService = commentService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var posts = await _db.CommunityPosts
-                .Include(x => x.User)
-                .OrderByDescending(x => x.CreatedAt)
-                .ToListAsync();
-
-            return View(posts);
+            return View(await _communityService.GetPostsAsync());
         }
 
         public async Task<IActionResult> Details(int id, string commentSort = "oldest")
         {
-            var post = await _db.CommunityPosts
-                .Include(x => x.User)
-                .FirstOrDefaultAsync(x => x.Id == id);
+            var post = await _communityService.GetPostAsync(id);
 
             if (post == null)
             {
@@ -38,12 +33,7 @@ namespace Chingoo.Controllers
             }
 
             ViewBag.CommentSort = commentSort == "latest" ? "latest" : "oldest";
-            ViewBag.Comments = await _db.Comments
-                .Include(x => x.User)
-                .Include(x => x.Replies)
-                    .ThenInclude(x => x.User)
-                .Where(x => x.BoardType == "Community" && x.BoardId == id)
-                .ToListAsync();
+            ViewBag.Comments = await _commentService.GetCommentsAsync("Community", id);
 
             return View(post);
         }
@@ -53,9 +43,7 @@ namespace Chingoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateComment(int communityPostId, string content, int? parentCommentId)
         {
-            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (!int.TryParse(userIdValue, out var userId))
+            if (!TryGetCurrentUserId(out var userId))
             {
                 return RedirectToAction("Login", "Account");
             }
@@ -65,7 +53,7 @@ namespace Chingoo.Controllers
                 return RedirectToAction(nameof(Details), new { id = communityPostId });
             }
 
-            var post = await _db.CommunityPosts.FirstOrDefaultAsync(x => x.Id == communityPostId);
+            var post = await _communityService.GetPostAsync(communityPostId);
 
             if (post == null)
             {
@@ -74,13 +62,12 @@ namespace Chingoo.Controllers
 
             if (parentCommentId.HasValue)
             {
-                if (post.UserId != userId)
+                if (!await _communityService.CanWriteReplyAsync(communityPostId, userId))
                 {
                     return Forbid();
                 }
 
-                var parentExists = await _db.Comments
-                    .AnyAsync(x => x.Id == parentCommentId.Value && x.BoardType == "Community" && x.BoardId == communityPostId);
+                var parentExists = await _commentService.ParentCommentExistsAsync("Community", communityPostId, parentCommentId.Value);
 
                 if (!parentExists)
                 {
@@ -88,18 +75,7 @@ namespace Chingoo.Controllers
                 }
             }
 
-            var comment = new Comment
-            {
-                BoardType = "Community",
-                BoardId = communityPostId,
-                UserId = userId,
-                Content = content,
-                ParentCommentId = parentCommentId,
-                CreatedAt = DateTime.Now
-            };
-
-            _db.Comments.Add(comment);
-            await _db.SaveChangesAsync();
+            await _commentService.CreateCommentAsync("Community", communityPostId, userId, content, parentCommentId);
 
             return RedirectToAction(nameof(Details), new { id = communityPostId });
         }
@@ -116,9 +92,7 @@ namespace Chingoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CommunityPost communityPost)
         {
-            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (!int.TryParse(userIdValue, out var userId))
+            if (!TryGetCurrentUserId(out var userId))
             {
                 return RedirectToAction("Login", "Account");
             }
@@ -130,13 +104,15 @@ namespace Chingoo.Controllers
                 return View(communityPost);
             }
 
-            communityPost.UserId = userId;
-            communityPost.CreatedAt = DateTime.Now;
-
-            _db.CommunityPosts.Add(communityPost);
-            await _db.SaveChangesAsync();
+            await _communityService.CreatePostAsync(communityPost, userId);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool TryGetCurrentUserId(out int userId)
+        {
+            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return int.TryParse(userIdValue, out userId);
         }
     }
 }

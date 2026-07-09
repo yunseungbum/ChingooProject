@@ -6,19 +6,9 @@
 
 <div class="home-board-layout">
 
-    <section class="board-content" aria-label="공지사항">
+    <section class="board-content" aria-label="홈 게시판">
 
         <div class="card shadow-sm border-0">
-
-            <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">공지사항</h4>
-
-                <a asp-controller="Notice"
-                   asp-action="Index"
-                   class="btn btn-outline-primary btn-sm">
-                    전체보기
-                </a>
-            </div>
 
             <div class="card-body p-0">
                 @await Html.PartialAsync("Partials/_NoticeBoard", Model.Notices)
@@ -26,8 +16,84 @@
 
         </div>
 
+        <div class="home-recommend-grid">
+            <div class="home-list-panel">
+                <div class="home-list-header">
+                    <h5>추천 축구 매치</h5>
+
+                    <a asp-controller="Post"
+                       asp-action="Index"
+                       asp-route-boardType="축구 매치">
+                        더보기
+                    </a>
+                </div>
+
+                <div class="home-list">
+                    @if (!Model.RecommendedMatches.Any())
+                    {
+                        <div class="home-list-empty">
+                            조건에 맞는 축구 매치가 없습니다.
+                        </div>
+                    }
+                    else
+                    {
+                        foreach (var post in Model.RecommendedMatches)
+                        {
+                            <a asp-controller="Post"
+                               asp-action="Details"
+                               asp-route-id="@post.Id"
+                               class="home-list-item">
+                                <span class="home-list-main">
+                                    <span class="home-list-title">@post.Title</span>
+                                    <span class="home-list-meta">@post.Region · @post.DayType · @post.TimeSlot</span>
+                                </span>
+                                <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="home-list-panel">
+                <div class="home-list-header">
+                    <h5>추천 용병 모집</h5>
+
+                    <a asp-controller="Post"
+                       asp-action="Index"
+                       asp-route-boardType="용병 모집">
+                        더보기
+                    </a>
+                </div>
+
+                <div class="home-list">
+                    @if (!Model.RecommendedMercenaries.Any())
+                    {
+                        <div class="home-list-empty">
+                            조건에 맞는 용병 모집 글이 없습니다.
+                        </div>
+                    }
+                    else
+                    {
+                        foreach (var post in Model.RecommendedMercenaries)
+                        {
+                            <a asp-controller="Post"
+                               asp-action="Details"
+                               asp-route-id="@post.Id"
+                               class="home-list-item">
+                                <span class="home-list-main">
+                                    <span class="home-list-title">@post.Title</span>
+                                    <span class="home-list-meta">@post.Region · @post.DayType · @post.TimeSlot</span>
+                                </span>
+                                <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
         <div class="home-community-panel">
-            <div class="home-community-header">
+            <div class="home-list-header">
                 <h5>커뮤니티</h5>
 
                 <a asp-controller="Community"
@@ -36,10 +102,10 @@
                 </a>
             </div>
 
-            <div class="home-community-list">
+            <div class="home-list">
                 @if (!Model.CommunityPosts.Any())
                 {
-                    <div class="home-community-empty">
+                    <div class="home-list-empty">
                         등록된 커뮤니티 게시글이 없습니다.
                     </div>
                 }
@@ -50,11 +116,11 @@
                         <a asp-controller="Community"
                            asp-action="Details"
                            asp-route-id="@post.Id"
-                            class="home-community-item">
-                            <span class="home-community-main">
-                                <span class="home-community-title">@post.Title</span>
+                           class="home-list-item">
+                            <span class="home-list-main">
+                                <span class="home-list-title">@post.Title</span>
                             </span>
-                            <span class="home-community-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
+                            <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
                         </a>
                     }
                 }

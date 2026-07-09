@@ -1,33 +1,20 @@
-using Chingoo.Data;
-using Chingoo.Models;
+Ôªøusing System.Security.Claims;
+using Chingoo.Services.Accounts;
 using Chingoo.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Chingoo.Common;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Chingoo.Controllers;
 
 public class AccountController : Controller
 {
-    private readonly AppDbContext _db;
-    public AccountController(AppDbContext db)
-    {
-        _db = db;
-    }
+    private readonly IAccountService _accountService;
 
-    public static IEnumerable<Claim> CreateUserClaims(User user)
+    public AccountController(IAccountService accountService)
     {
-        return new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.LoginId),
-            new Claim("TeamName", user.TeamName ?? ""),
-            new Claim("Region", user.Region ?? "")
-        };
+        _accountService = accountService;
     }
 
     [HttpGet]
@@ -45,20 +32,7 @@ public class AccountController : Controller
             return View(model);
         }
 
-        var user = new User
-        {
-            LoginId = model.LoginId,
-            TeamName = model.TeamName,
-            Email = model.Email,
-
-
-            Password = model.Password,
-            Region = model.Region,
-            SoccerTemperature = 36,
-            CreatedAt = DateTime.Now
-        };
-        _db.Users.Add(user);
-        await _db.SaveChangesAsync();
+        await _accountService.RegisterAsync(model);
 
         return RedirectToAction("Login");
     }
@@ -66,29 +40,12 @@ public class AccountController : Controller
     [HttpGet]
     public IActionResult CheckLoginId(string loginId)
     {
-        if (string.IsNullOrWhiteSpace(loginId) || loginId.Length < 4 || loginId.Length > 30)
-        {
-            return Json(new
-            {
-                available = false,
-                message = "æ∆¿Ãµ¥¬ 4~30¿⁄∑Œ ¿‘∑¬«ÿ ¡÷ººø‰."
-            });
-        }
-        bool exists = _db.Users.Any(u => u.LoginId == loginId);
-
-        if (exists)
-        {
-            return Json(new
-            {
-                available = false,
-                message = "¿ÃπÃ ªÁøÎ ¡ﬂ¿Œ æ∆¿Ãµ¿‘¥œ¥Ÿ."
-            });
-        }
+        var result = _accountService.CheckLoginId(loginId);
 
         return Json(new
         {
-            available = true,
-            message = "ªÁøÎ ∞°¥…«— æ∆¿Ãµ¿‘¥œ¥Ÿ."
+            available = result.Available,
+            message = result.Message
         });
     }
 
@@ -100,27 +57,18 @@ public class AccountController : Controller
             return View(model);
         }
 
-        var user = _db.Users.FirstOrDefault(u => u.LoginId == model.LoginId);
+        var result = await _accountService.ValidateLoginAsync(model);
 
-        if (user == null)
+        if (result.User == null)
         {
-            TempData["Message"] = "æ∆¿Ãµ∏¶ ¥ŸΩ√ »Æ¿Œ «ÿ¡÷ººø‰.";
-            return View(model);
-        }
-        if (user.Password != model.Password)
-        {
-            TempData["Message"] = "∫Òπ–π¯»£∞° ø√πŸ∏£¡ˆ æ Ω¿¥œ¥Ÿ.";
+            TempData["Message"] = result.ErrorMessage;
             return View(model);
         }
 
-        // 1. Claims ª˝º∫
-        var claims = CreateUserClaims(user);
-
+        var claims = _accountService.CreateUserClaims(result.User);
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
         var principal = new ClaimsPrincipal(identity);
 
-        // 2. ƒÌ≈∞ πﬂ±ﬁ
         await HttpContext.SignInAsync(
             CookieAuthenticationDefaults.AuthenticationScheme,
             principal,
@@ -130,7 +78,7 @@ public class AccountController : Controller
                 ExpiresUtc = DateTime.UtcNow.AddHours(3)
             });
 
-        TempData["Message"] = "∑Œ±◊¿Œ µ«æ˙Ω¿¥œ¥Ÿ.";
+        TempData["Message"] = "Î°úÍ∑∏Ïù∏ ÎêòÏóàÏäµÎãàÎã§.";
 
         return RedirectToAction("Index", "Home");
     }
@@ -140,7 +88,7 @@ public class AccountController : Controller
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-        TempData["Message"] = "∑Œ±◊æ∆øÙ µ«æ˙Ω¿¥œ¥Ÿ.";
+        TempData["Message"] = "Î°úÍ∑∏ÏïÑÏõÉ ÎêòÏóàÏäµÎãàÎã§.";
 
         return RedirectToAction("Index", "Home");
     }
@@ -149,30 +97,17 @@ public class AccountController : Controller
     [HttpGet]
     public async Task<IActionResult> MyPage()
     {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-        if (!int.TryParse(userId, out var id))
+        if (!TryGetCurrentUserId(out var userId))
         {
             return RedirectToAction("Login");
         }
 
-        var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == id);
+        var model = await _accountService.GetMyPageViewModelAsync(userId);
 
-        if (user == null)
+        if (model == null)
         {
             return RedirectToAction("Login");
         }
-
-        var model = new MyPageViewModel
-        {
-            LoginId = user.LoginId,
-            TeamName = user.TeamName,
-            Email = user.Email,
-            Region = user.Region,
-            SoccerTemperature = user.SoccerTemperature,
-            CreatedAt = user.CreatedAt,
-            Regions = BoardOptions.Regions
-        };
 
         return View(model);
     }
@@ -182,49 +117,33 @@ public class AccountController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> MyPage(MyPageViewModel model)
     {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-        if (!int.TryParse(userId, out var id))
+        if (!TryGetCurrentUserId(out var userId))
         {
             return RedirectToAction("Login");
         }
 
-        var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == id);
-
-        if (user == null)
-        {
-            return RedirectToAction("Login");
-        }
-
-        model.LoginId = user.LoginId;
-        model.SoccerTemperature = user.SoccerTemperature;
-        model.CreatedAt = user.CreatedAt;
-        model.Regions = BoardOptions.Regions;
+        await _accountService.FillMyPageFixedFieldsAsync(userId, model);
 
         if (!ModelState.IsValid)
         {
             return View(model);
         }
 
-        user.TeamName = model.TeamName;
-        user.Email = model.Email;
-        user.Region = model.Region;
+        var result = await _accountService.UpdateMyPageAsync(userId, model);
 
-        if (!string.IsNullOrWhiteSpace(model.NewPassword) || !string.IsNullOrWhiteSpace(model.CurrentPassword) || !string.IsNullOrWhiteSpace(model.ConfirmNewPassword))
+        if (result.User == null)
         {
-            if (model.CurrentPassword != user.Password)
-            {
-                ModelState.AddModelError(nameof(model.CurrentPassword), "«ˆ¿Á ∫Òπ–π¯»£∞° ø√πŸ∏£¡ˆ æ Ω¿¥œ¥Ÿ.");
-                model.Regions = BoardOptions.Regions;
-                return View(model);
-            }
-
-            user.Password = model.NewPassword;
+            return RedirectToAction("Login");
         }
 
-        await _db.SaveChangesAsync();
+        if (!result.Success)
+        {
+            ModelState.AddModelError(nameof(model.CurrentPassword), result.ErrorMessage ?? "ÎÇ¥Ï†ïÎ≥¥ ÏàòÏ†ïÏóê Ïã§Ìå®ÌñàÏäµÎãàÎã§.");
+            await _accountService.FillMyPageFixedFieldsAsync(userId, model);
+            return View(model);
+        }
 
-        var claims = CreateUserClaims(user);
+        var claims = _accountService.CreateUserClaims(result.User);
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         var principal = new ClaimsPrincipal(identity);
 
@@ -237,8 +156,14 @@ public class AccountController : Controller
                 ExpiresUtc = DateTime.UtcNow.AddHours(3)
             });
 
-        TempData["Message"] = "≥ª¡§∫∏∞° ºˆ¡§µ«æ˙Ω¿¥œ¥Ÿ.";
+        TempData["Message"] = "ÎÇ¥Ï†ïÎ≥¥Í∞Ä ÏàòÏ†ïÎêòÏóàÏäµÎãàÎã§.";
 
         return RedirectToAction("MyPage");
+    }
+
+    private bool TryGetCurrentUserId(out int userId)
+    {
+        var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        return int.TryParse(userIdValue, out userId);
     }
 }

@@ -178,22 +178,6 @@
         border-radius: 14px;
     }
 }
-.layout-wrapper {
-    display: flex;
-    gap: 20px;
-    max-width: 1200px; /* 핵심: 전체 폭 제한 */
-    margin: 0 auto; /* 가운데 정렬 */
-}
-
-.sidebar-area {
-    width: 280px;
-    flex-shrink: 0;
-}
-
-.content-area {
-    flex: 1;
-    min-width: 0;
-}
 
 .offcanvas {
     --bs-offcanvas-width: 280px;

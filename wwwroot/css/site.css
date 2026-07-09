@@ -13,6 +13,32 @@
     flex: 1;
     min-width: 0;
 }
+
+@media (max-width: 768px) {
+    .layout-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 12px;
+    }
+
+    .sidebar-area {
+        width: 100%;
+        flex: none;
+        margin-bottom: 12px;
+    }
+
+    .content-area {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .layout-wrapper {
+        padding: 0 8px;
+    }
+}
 html {
     min-height: 100%;
 }

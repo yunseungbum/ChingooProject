@@ -22,8 +22,7 @@ namespace Chingoo.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Comment>()
-                .HasIndex(x => new { x.BoardType, x.BoardId });
+            modelBuilder.Entity<Comment>().HasIndex(x => new { x.BoardType, x.BoardId });
         }
     }
 }

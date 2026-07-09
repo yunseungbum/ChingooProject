@@ -1,33 +1,31 @@
 using System.Security.Claims;
-using Chingoo.Data;
 using Chingoo.Models;
+using Chingoo.Services.Comments;
+using Chingoo.Services.Notices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Chingoo.Controllers
 {
     public class NoticeController : Controller
     {
-        private readonly AppDbContext _db;
+        private readonly INoticeService _noticeService;
+        private readonly ICommentService _commentService;
 
-        public NoticeController(AppDbContext db)
+        public NoticeController(INoticeService noticeService, ICommentService commentService)
         {
-            _db = db;
+            _noticeService = noticeService;
+            _commentService = commentService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var notices = await _db.Notices
-                .OrderByDescending(x => x.CreatedAt)
-                .ToListAsync();
-
-            return View(notices);
+            return View(await _noticeService.GetNoticesAsync());
         }
 
         public async Task<IActionResult> Details(int id, string commentSort = "oldest")
         {
-            var notice = await _db.Notices.FirstOrDefaultAsync(x => x.Id == id);
+            var notice = await _noticeService.GetNoticeAsync(id);
 
             if (notice == null)
             {
@@ -35,12 +33,7 @@ namespace Chingoo.Controllers
             }
 
             ViewBag.CommentSort = commentSort == "latest" ? "latest" : "oldest";
-            ViewBag.Comments = await _db.Comments
-                .Include(x => x.User)
-                .Include(x => x.Replies)
-                    .ThenInclude(x => x.User)
-                .Where(x => x.BoardType == "Notice" && x.BoardId == id)
-                .ToListAsync();
+            ViewBag.Comments = await _commentService.GetCommentsAsync("Notice", id);
 
             return View(notice);
         }
@@ -50,9 +43,7 @@ namespace Chingoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateComment(int noticeId, string content, int? parentCommentId)
         {
-            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (!int.TryParse(userIdValue, out var userId))
+            if (!TryGetCurrentUserId(out var userId))
             {
                 return RedirectToAction("Login", "Account");
             }
@@ -62,9 +53,7 @@ namespace Chingoo.Controllers
                 return RedirectToAction(nameof(Details), new { id = noticeId });
             }
 
-            var noticeExists = await _db.Notices.AnyAsync(x => x.Id == noticeId);
-
-            if (!noticeExists)
+            if (!await _noticeService.NoticeExistsAsync(noticeId))
             {
                 return NotFound();
             }
@@ -76,8 +65,7 @@ namespace Chingoo.Controllers
                     return Forbid();
                 }
 
-                var parentExists = await _db.Comments
-                    .AnyAsync(x => x.Id == parentCommentId.Value && x.BoardType == "Notice" && x.BoardId == noticeId);
+                var parentExists = await _commentService.ParentCommentExistsAsync("Notice", noticeId, parentCommentId.Value);
 
                 if (!parentExists)
                 {
@@ -85,18 +73,7 @@ namespace Chingoo.Controllers
                 }
             }
 
-            var comment = new Comment
-            {
-                BoardType = "Notice",
-                BoardId = noticeId,
-                UserId = userId,
-                Content = content,
-                ParentCommentId = parentCommentId,
-                CreatedAt = DateTime.Now
-            };
-
-            _db.Comments.Add(comment);
-            await _db.SaveChangesAsync();
+            await _commentService.CreateCommentAsync("Notice", noticeId, userId, content, parentCommentId);
 
             return RedirectToAction(nameof(Details), new { id = noticeId });
         }
@@ -128,12 +105,15 @@ namespace Chingoo.Controllers
                 return View(notice);
             }
 
-            notice.CreatedAt = DateTime.Now;
-
-            _db.Notices.Add(notice);
-            await _db.SaveChangesAsync();
+            await _noticeService.CreateNoticeAsync(notice);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool TryGetCurrentUserId(out int userId)
+        {
+            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return int.TryParse(userIdValue, out userId);
         }
     }
 }

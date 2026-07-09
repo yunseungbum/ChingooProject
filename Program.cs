@@ -1,4 +1,10 @@
 ﻿using Chingoo.Data;
+using Chingoo.Services.Accounts;
+using Chingoo.Services.Comments;
+using Chingoo.Services.Communities;
+using Chingoo.Services.Home;
+using Chingoo.Services.Notices;
+using Chingoo.Services.Posts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
@@ -15,12 +21,20 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // MVC
 builder.Services.AddControllersWithViews();
 
+// Services
+builder.Services.AddScoped<IHomeService, HomeService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<INoticeService, NoticeService>();
+builder.Services.AddScoped<ICommunityService, CommunityService>();
+
 // 인증
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
-        options.ExpireTimeSpan = TimeSpan.FromHours(3);
+        options.ExpireTimeSpan = TimeSpan.FromHours(1);
         options.SlidingExpiration = true;
     });
 

@@ -77,6 +77,44 @@
                 <span asp-validation-for="Region" class="text-danger"></span>
             </div>
 
+            <div class="mb-3">
+                <label asp-for="PreferredDayType" class="form-label"></label>
+
+                <select asp-for="PreferredDayType" class="form-select">
+                    <option value="상관없음">상관없음</option>
+                    <option value="평일">평일</option>
+                    <option value="주말">주말</option>
+                </select>
+
+                <span asp-validation-for="PreferredDayType" class="text-danger"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="PreferredTimeSlot" class="form-label"></label>
+
+                <select asp-for="PreferredTimeSlot" class="form-select">
+                    <option value="상관없음">상관없음</option>
+                    <option value="06:00~08:00">06:00~08:00</option>
+                    <option value="07:00~09:00">07:00~09:00</option>
+                    <option value="08:00~10:00">08:00~10:00</option>
+                    <option value="09:00~11:00">09:00~11:00</option>
+                    <option value="10:00~12:00">10:00~12:00</option>
+                    <option value="11:00~13:00">11:00~13:00</option>
+                    <option value="12:00~14:00">12:00~14:00</option>
+                    <option value="13:00~15:00">13:00~15:00</option>
+                    <option value="14:00~16:00">14:00~16:00</option>
+                    <option value="15:00~17:00">15:00~17:00</option>
+                    <option value="16:00~18:00">16:00~18:00</option>
+                    <option value="17:00~19:00">17:00~19:00</option>
+                    <option value="18:00~20:00">18:00~20:00</option>
+                    <option value="19:00~21:00">19:00~21:00</option>
+                    <option value="20:00~22:00">20:00~22:00</option>
+                    <option value="21:00~23:00">21:00~23:00</option>
+                </select>
+
+                <span asp-validation-for="PreferredTimeSlot" class="text-danger"></span>
+            </div>
+
             <button type="submit" class="btn btn-success w-100">
                 회원가입
             </button>

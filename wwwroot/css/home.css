@@ -1,4 +1,4 @@
-﻿.home-board-layout {
+.home-board-layout {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -12,16 +12,27 @@
     padding: 18px;
 }
 
-.home-community-panel {
-    width: 50%;
+.home-recommend-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
     margin-top: 16px;
+}
+
+.home-list-panel,
+.home-community-panel {
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     background: #fff;
     overflow: hidden;
 }
 
-.home-community-header {
+.home-community-panel {
+    width: 50%;
+    margin-top: 16px;
+}
+
+.home-list-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,25 +41,26 @@
     background: #f9fafb;
 }
 
-.home-community-header h5 {
+.home-list-header h5 {
     margin: 0;
     font-size: 0.95rem;
     font-weight: 700;
     color: #111827;
 }
 
-.home-community-header a {
+.home-list-header a {
     color: #6b7280;
     font-size: 0.8rem;
     text-decoration: none;
+    white-space: nowrap;
 }
 
-.home-community-list {
+.home-list {
     display: flex;
     flex-direction: column;
 }
 
-.home-community-item {
+.home-list-item {
     display: flex;
     justify-content: space-between;
     gap: 12px;
@@ -58,51 +70,122 @@
     text-decoration: none;
 }
 
-.home-community-item:last-child {
+.home-list-item:last-child {
     border-bottom: 0;
 }
 
-.home-community-item:hover {
+.home-list-item:hover {
     background: #f3f7ff;
     color: #0d6efd;
 }
 
-.home-community-title {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: 600;
-}
-
-.home-community-main {
+.home-list-main {
     display: flex;
     flex-direction: column;
     min-width: 0;
 }
 
-.home-community-author {
-    margin-top: 2px;
-    color: #111827;
-    font-size: 0.78rem;
+.home-list-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: 700;
 }
 
-.home-community-date {
+.home-list-meta {
+    margin-top: 2px;
+    overflow: hidden;
+    color: #6b7280;
+    font-size: 0.78rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.home-list-date {
     flex-shrink: 0;
     color: #9ca3af;
     font-size: 0.78rem;
     white-space: nowrap;
 }
 
-.home-community-empty {
+.home-list-empty {
     padding: 14px 12px;
     color: #6b7280;
     font-size: 0.86rem;
 }
 
 @media (max-width: 768px) {
+    .board-content {
+        min-height: auto;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
+    .board-content .card {
+        border-radius: 8px;
+    }
+
+    .board-content .card-header {
+        padding: 10px 12px;
+    }
+
+    .board-content .card-header h4 {
+        font-size: 1rem;
+    }
+
+    .board-content .card-header .btn {
+        padding: 4px 8px;
+        font-size: 0.74rem;
+    }
+
+    .home-recommend-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
     .home-community-panel {
         width: 100%;
+        margin-top: 10px;
+    }
+
+    .home-list-header {
+        padding: 8px 10px;
+    }
+
+    .home-list-header h5 {
+        font-size: 0.88rem;
+    }
+
+    .home-list-header a {
+        font-size: 0.74rem;
+    }
+
+    .home-list-item {
+        align-items: flex-start;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .home-list-title {
+        font-size: 0.86rem;
+    }
+
+    .home-list-meta,
+    .home-list-date {
+        font-size: 0.72rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-list-item {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .home-list-date {
+        align-self: flex-start;
     }
 }

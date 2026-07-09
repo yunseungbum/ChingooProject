@@ -1,36 +1,28 @@
 using System.Security.Claims;
-using Chingoo.Common;
-using Chingoo.Data;
-using Chingoo.Models;
+using Chingoo.Services.Comments;
+using Chingoo.Services.Posts;
 using Chingoo.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Chingoo.Controllers
 {
     [Authorize]
     public class PostController : Controller
     {
-        private readonly AppDbContext _db;
+        private readonly IPostService _postService;
+        private readonly ICommentService _commentService;
 
-        public PostController(AppDbContext db)
+        public PostController(IPostService postService, ICommentService commentService)
         {
-            _db = db;
+            _postService = postService;
+            _commentService = commentService;
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            var model = new PostCreateViewModel
-            {
-                MatchDate = DateTime.Today,
-                Days = BoardOptions.Days,
-                Regions = BoardOptions.Regions,
-                Times = BoardOptions.Times
-            };
-
-            return View(model);
+            return View(_postService.GetCreateViewModel());
         }
 
         [HttpPost]
@@ -38,36 +30,20 @@ namespace Chingoo.Controllers
         {
             if (!ModelState.IsValid)
             {
-                model.Days = BoardOptions.Days;
-                model.Regions = BoardOptions.Regions;
-                model.Times = BoardOptions.Times;
+                var fixedModel = _postService.GetCreateViewModel();
+                model.Days = fixedModel.Days;
+                model.Regions = fixedModel.Regions;
+                model.Times = fixedModel.Times;
 
                 return View(model);
             }
 
-            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (string.IsNullOrEmpty(userIdValue))
+            if (!TryGetCurrentUserId(out var userId))
             {
                 return RedirectToAction("Login", "Account");
             }
 
-            int userId = int.Parse(userIdValue);
-
-            Post post = new Post
-            {
-                UserId = userId,
-                BoardType = model.BoardType,
-                DayType = model.DayType,
-                Region = model.Region,
-                MatchDate = model.MatchDate,
-                TimeSlot = model.TimeSlot,
-                Title = model.Title,
-                Content = model.Content
-            };
-
-            _db.Posts.Add(post);
-            await _db.SaveChangesAsync();
+            await _postService.CreatePostAsync(model, userId);
 
             return RedirectToAction(nameof(Index), new
             {
@@ -79,33 +55,14 @@ namespace Chingoo.Controllers
         {
             ViewBag.BoardType = boardType;
 
-            var query = _db.Posts.Include(x => x.User).AsQueryable();
-
-            if (!string.IsNullOrEmpty(boardType))
-            {
-                query = query.Where(x => x.BoardType == boardType);
-            }
-
-            if (!string.IsNullOrEmpty(day))
-            {
-                query = query.Where(x => x.DayType == day);
-            }
-
-            if (!string.IsNullOrEmpty(region))
-            {
-                query = query.Where(x => x.Region == region);
-            }
-
-            var posts = query.OrderByDescending(x => x.CreatedAt).ToList();
+            var posts = _postService.GetPosts(boardType, day, region);
 
             return View(posts);
         }
 
-        public IActionResult Details(int id, string commentSort = "oldest")
+        public async Task<IActionResult> Details(int id, string commentSort = "oldest")
         {
-            var post = _db.Posts
-                .Include(x => x.User)
-                .FirstOrDefault(x => x.Id == id);
+            var post = await _postService.GetPostDetailsAsync(id);
 
             if (post == null)
             {
@@ -113,12 +70,7 @@ namespace Chingoo.Controllers
             }
 
             ViewBag.CommentSort = commentSort == "latest" ? "latest" : "oldest";
-            ViewBag.Comments = _db.Comments
-                .Include(x => x.User)
-                .Include(x => x.Replies)
-                    .ThenInclude(x => x.User)
-                .Where(x => x.BoardType == "Post" && x.BoardId == id)
-                .ToList();
+            ViewBag.Comments = await _commentService.GetCommentsAsync("Post", id);
 
             return View(post);
         }
@@ -127,9 +79,7 @@ namespace Chingoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateComment(int postId, string content, int? parentCommentId)
         {
-            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (!int.TryParse(userIdValue, out var userId))
+            if (!TryGetCurrentUserId(out var userId))
             {
                 return RedirectToAction("Login", "Account");
             }
@@ -139,7 +89,7 @@ namespace Chingoo.Controllers
                 return RedirectToAction(nameof(Details), new { id = postId });
             }
 
-            var post = await _db.Posts.FirstOrDefaultAsync(x => x.Id == postId);
+            var post = await _postService.GetPostDetailsAsync(postId);
 
             if (post == null)
             {
@@ -148,13 +98,12 @@ namespace Chingoo.Controllers
 
             if (parentCommentId.HasValue)
             {
-                if (post.UserId != userId)
+                if (!await _postService.CanWriteReplyAsync(postId, userId))
                 {
                     return Forbid();
                 }
 
-                var parentExists = await _db.Comments
-                    .AnyAsync(x => x.Id == parentCommentId.Value && x.BoardType == "Post" && x.BoardId == postId);
+                var parentExists = await _commentService.ParentCommentExistsAsync("Post", postId, parentCommentId.Value);
 
                 if (!parentExists)
                 {
@@ -162,20 +111,15 @@ namespace Chingoo.Controllers
                 }
             }
 
-            var comment = new Comment
-            {
-                BoardType = "Post",
-                BoardId = postId,
-                UserId = userId,
-                Content = content,
-                ParentCommentId = parentCommentId,
-                CreatedAt = DateTime.Now
-            };
-
-            _db.Comments.Add(comment);
-            await _db.SaveChangesAsync();
+            await _commentService.CreateCommentAsync("Post", postId, userId, content, parentCommentId);
 
             return RedirectToAction(nameof(Details), new { id = postId });
+        }
+
+        private bool TryGetCurrentUserId(out int userId)
+        {
+            var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return int.TryParse(userIdValue, out userId);
         }
     }
 }

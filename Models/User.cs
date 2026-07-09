@@ -23,6 +23,12 @@ namespace Chingoo.Models
         [StringLength(50)]
         public string Region { get; set; } = string.Empty;
 
+        [StringLength(20)]
+        public string PreferredDayType { get; set; } = "상관없음";
+
+        [StringLength(20)]
+        public string PreferredTimeSlot { get; set; } = "상관없음";
+
         public int SoccerTemperature { get; set; } = 36;
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;

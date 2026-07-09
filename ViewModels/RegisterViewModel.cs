@@ -34,4 +34,14 @@ public class RegisterViewModel
     [StringLength(50)]
     [Display(Name = "지역")]
     public string Region { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "활동 가능 요일을 선택해 주세요.")]
+    [StringLength(20)]
+    [Display(Name = "활동 가능 요일")]
+    public string PreferredDayType { get; set; } = "상관없음";
+
+    [Required(ErrorMessage = "선호 시간대를 선택해 주세요.")]
+    [StringLength(20)]
+    [Display(Name = "선호 시간대")]
+    public string PreferredTimeSlot { get; set; } = "상관없음";
 }
