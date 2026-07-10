@@ -46,7 +46,7 @@
                                class="home-list-item">
                                 <span class="home-list-main">
                                     <span class="home-list-title">@post.Title</span>
-                                    <span class="home-list-meta">@post.Region · @post.DayType · @post.TimeSlot</span>
+                                    <span class="home-list-meta">@post.Region · @post.DayType · @post.MatchDate.ToString("MM.dd") · @post.TimeSlot</span>
                                 </span>
                                 <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
                             </a>
@@ -86,7 +86,7 @@
                                class="home-list-item">
                                 <span class="home-list-main">
                                     <span class="home-list-title">@post.Title</span>
-                                    <span class="home-list-meta">@post.Region · @post.DayType · @post.TimeSlot</span>
+                                    <span class="home-list-meta">@post.Region · @post.DayType · @post.MatchDate.ToString("MM.dd") · @post.TimeSlot</span>
                                 </span>
                                 <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
                             </a>

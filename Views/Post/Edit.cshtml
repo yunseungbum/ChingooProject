@@ -1,10 +1,15 @@
 @model Chingoo.ViewModels.PostCreateViewModel
 
 @{
-    ViewData["Title"] = "게시글 작성";
+    ViewData["Title"] = "게시글 수정";
+    var postId = ViewContext.RouteData.Values["id"];
 }
 
-<form asp-action="Create" method="post">
+<h2 class="mb-3">게시글 수정</h2>
+
+<form asp-action="Edit" asp-route-id="@postId" method="post">
+    @Html.AntiForgeryToken()
+
     <div class="mb-3">
         <label asp-for="BoardType" class="form-label">게시판</label>
 
@@ -87,9 +92,15 @@
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
 
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end gap-2">
+        <a asp-action="Details"
+           asp-route-id="@postId"
+           class="btn btn-outline-secondary">
+            취소
+        </a>
+
         <button type="submit" class="btn btn-primary">
-            게시글 등록
+            수정 완료
         </button>
     </div>
 </form>

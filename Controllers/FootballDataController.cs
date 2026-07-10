@@ -17,8 +17,15 @@ namespace Chingoo.Controllers
         [HttpGet("world-cup/matches")]
         public async Task<IActionResult> GetWorldCupMatches([FromQuery] int season = 2026, CancellationToken cancellationToken = default)
         {
-            var matches = await _footballDataService.GetWorldCupMatchesAsync(season, cancellationToken);
-            return Ok(matches);
+            try
+            {
+                var matches = await _footballDataService.GetWorldCupMatchesAsync(season, cancellationToken);
+                return Ok(matches);
+            }
+            catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+            {
+                return new EmptyResult();
+            }
         }
     }
 }

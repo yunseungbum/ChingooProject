@@ -115,5 +115,70 @@ namespace Chingoo.Controllers
             var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return int.TryParse(userIdValue, out userId);
         }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (User.Identity?.Name != "admin")
+            {
+                return Forbid();
+            }
+
+            var notice = await _noticeService.GetNoticeAsync(id);
+
+            if (notice == null)
+            {
+                return NotFound();
+            }
+
+            return View(notice);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Notice notice)
+        {
+            if (User.Identity?.Name != "admin")
+            {
+                return Forbid();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                notice.Id = id;
+                return View(notice);
+            }
+
+            var updated = await _noticeService.UpdateNoticeAsync(id, notice);
+
+            if (!updated)
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (User.Identity?.Name != "admin")
+            {
+                return Forbid();
+            }
+
+            var deleted = await _noticeService.DeleteNoticeAsync(id);
+
+            if (!deleted)
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

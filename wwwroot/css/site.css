@@ -162,6 +162,11 @@ body {
     word-break: break-word;
 }
 
+.post-content,
+.comment-content {
+    white-space: pre-wrap;
+}
+
 .comment-reply-toggle {
     position: absolute;
     top: 0;

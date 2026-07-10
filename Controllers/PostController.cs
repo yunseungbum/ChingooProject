@@ -28,6 +28,8 @@ namespace Chingoo.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(PostCreateViewModel model)
         {
+            NormalizeTeamRecruitMatchDate(model);
+
             if (!ModelState.IsValid)
             {
                 var fixedModel = _postService.GetCreateViewModel();
@@ -123,6 +125,94 @@ namespace Chingoo.Controllers
         {
             var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return int.TryParse(userIdValue, out userId);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var model = await _postService.GetEditViewModelAsync(id, userId);
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, PostCreateViewModel model)
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            NormalizeTeamRecruitMatchDate(model);
+
+            if (!ModelState.IsValid)
+            {
+                var fixedModel = _postService.GetCreateViewModel();
+                model.Days = fixedModel.Days;
+                model.Regions = fixedModel.Regions;
+                model.Times = fixedModel.Times;
+
+                return View(model);
+            }
+
+            var updated = await _postService.UpdatePostAsync(id, model, userId);
+
+            if (!updated)
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var deleted = await _postService.DeletePostAsync(id, userId);
+
+            if (!deleted)
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        private void NormalizeTeamRecruitMatchDate(PostCreateViewModel model)
+        {
+            if (model.BoardType == "팀원 모집")
+            {
+                model.MatchDate = DateTime.Today;
+                ModelState.Remove(nameof(model.MatchDate));
+            }
+        }
+        public IActionResult Manage(string filter = "전체")
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var model = _postService.GetManageViewModel(userId, filter);
+
+            return View(model);
         }
     }
 }

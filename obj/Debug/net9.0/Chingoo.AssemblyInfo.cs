@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Chingoo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c81900997d51dd99c32567f00754c11b60a08836")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf6eefc7fa503833cdf9507f0613af24f611fb2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Chingoo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Chingoo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

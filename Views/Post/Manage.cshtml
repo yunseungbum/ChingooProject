@@ -1,0 +1,77 @@
+﻿@model Chingoo.ViewModels.PostManageViewModel
+
+@{
+    ViewData["Title"] = "게시글 관리";
+
+    var filters = new[] { "전체", "축구 매치", "용병 모집", "팀원 모집", "커뮤니티" };
+}
+
+<h2 class="mb-3">게시글 관리</h2>
+
+<div class="d-flex flex-wrap gap-2 mb-3">
+    @foreach (var filter in filters)
+    {
+            <a asp-action="Manage"
+               asp-route-filter="@filter"
+               class="btn btn-sm @(Model.Filter == filter ? "btn-primary" : "btn-outline-primary")">
+            @filter
+            </a>
+    }
+</div>
+
+@if (!Model.Items.Any())
+{
+        <div class="text-muted">
+            작성한 게시글이 없습니다.
+        </div>
+}
+else
+{
+        <div class="list-group">
+        @foreach (var item in Model.Items)
+        {
+            var detailsController = item.SourceType == "Community" ? "Community" : "Post";
+
+                    <a asp-controller="@detailsController"
+                       asp-action="Details"
+                       asp-route-id="@item.Id"
+                       class="list-group-item list-group-item-action">
+
+                        <div class="d-flex justify-content-between gap-3">
+                            <div class="min-width-0">
+                                <div class="fw-bold">@item.Title</div>
+
+                                <div class="text-muted small mt-1">
+                            @item.BoardType
+
+                            @if (!string.IsNullOrWhiteSpace(item.Region))
+                            {
+                                            <span> · @item.Region</span>
+                            }
+
+                            @if (!string.IsNullOrWhiteSpace(item.DayType))
+                            {
+                                            <span> · @item.DayType</span>
+                            }
+
+                            @if (item.MatchDate.HasValue)
+                            {
+                                            <span> · @item.MatchDate.Value.ToString("MM.dd")</span>
+                            }
+
+                            @if (!string.IsNullOrWhiteSpace(item.TimeSlot))
+                            {
+                                            <span> · @item.TimeSlot</span>
+                            }
+                                </div>
+                            </div>
+
+                            <div class="text-muted small text-nowrap">
+                        @item.CreatedAt.ToString("MM.dd HH:mm")
+                            </div>
+                        </div>
+
+                    </a>
+        }
+        </div>
+}

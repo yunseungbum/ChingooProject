@@ -15,23 +15,47 @@
 
     <div class="card-body">
 
+        @if (isPostAuthor)
+        {
+            <div class="d-flex justify-content-end gap-2 mb-3">
+                <a asp-action="Edit"
+                   asp-route-id="@Model.Id"
+                   class="btn btn-outline-primary btn-sm">
+                    수정
+                </a>
+
+                <form asp-action="Delete"
+                      asp-route-id="@Model.Id"
+                      method="post"
+                      onsubmit="return confirm('게시글을 삭제하시겠습니까? 관련 댓글과 대댓글도 모두 삭제됩니다.');">
+                    @Html.AntiForgeryToken()
+
+                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                        삭제
+                    </button>
+                </form>
+            </div>
+        }
+
         <h3 class="mb-3">@Model.Title</h3>
 
         <div class="text-muted small mb-3">
             작성자: <strong>@Model.User.TeamName</strong> |
-            날짜: @Model.DayType |
+            평일/주말: @Model.DayType |
+            @if (Model.BoardType != "팀원 모집")
+            {
+                <span>경기 날짜: @Model.MatchDate.ToString("MM.dd") |</span>
+            }
             시간: @Model.TimeSlot |
             장소: @Model.Region
         </div>
 
         <hr />
 
-        <div class="mt-3 post-content">
-            @Model.Content
-        </div>
+        <div class="mt-3 post-content">@Model.Content</div>
 
         <div class="text-end text-muted small mt-4">
-            @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")
+            작성일 @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")
         </div>
 
     </div>
@@ -78,9 +102,7 @@
                         <span>@comment.CreatedAt.ToString("yyyy.MM.dd. HH:mm")</span>
                     </div>
 
-                    <div class="comment-content">
-                        @comment.Content
-                    </div>
+                    <div class="comment-content">@comment.Content</div>
 
                     @if (isPostAuthor)
                     {
@@ -107,9 +129,7 @@
                                             <span>@reply.CreatedAt.ToString("yyyy.MM.dd. HH:mm")</span>
                                         </div>
 
-                                        <div class="comment-content">
-                                            @reply.Content
-                                        </div>
+                                        <div class="comment-content">@reply.Content</div>
                                     </div>
                                 </article>
                             }

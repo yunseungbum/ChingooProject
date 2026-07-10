@@ -86,15 +86,19 @@ else
                         <div>
                             작성자: <strong>@item.User.TeamName</strong>
                             |
-                            날짜: @item.DayType
+                            평일/주말: @item.DayType
                             |
+                            @if (item.BoardType != "팀원 모집")
+                            {
+                                <span>경기 날짜: @item.MatchDate.ToString("MM.dd") |</span>
+                            }
                             시간: @item.TimeSlot
                             |
                             장소: @item.Region
                         </div>
 
                         <div>
-                            @item.CreatedAt.ToString("yyyy-MM-dd")
+                            작성일 @item.CreatedAt.ToString("yyyy-MM-dd")
                         </div>
 
                     </div>
