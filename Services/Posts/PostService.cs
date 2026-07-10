@@ -44,7 +44,7 @@ namespace Chingoo.Services.Posts
             await _db.SaveChangesAsync();
         }
 
-        public List<Post> GetPosts(string boardType, string day, string region)
+        public List<Post> GetPosts(string boardType, string day, string region, string time)
         {
             var query = _db.Posts.Include(x => x.User).AsQueryable();
 
@@ -61,6 +61,11 @@ namespace Chingoo.Services.Posts
             if (!string.IsNullOrEmpty(region))
             {
                 query = query.Where(x => x.Region == region);
+            }
+
+            if (!string.IsNullOrEmpty(time))
+            {
+                query = query.Where(x => x.TimeSlot == time);
             }
 
             return query.OrderByDescending(x => x.CreatedAt).ToList();

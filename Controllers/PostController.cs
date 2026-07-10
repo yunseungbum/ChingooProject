@@ -51,11 +51,14 @@ namespace Chingoo.Controllers
             });
         }
 
-        public IActionResult Index(string boardType, string day, string region)
+        public IActionResult Index(string boardType, string day, string region, string time)
         {
             ViewBag.BoardType = boardType;
+            ViewBag.Day = day;
+            ViewBag.Region = region;
+            ViewBag.Time = time;
 
-            var posts = _postService.GetPosts(boardType, day, region);
+            var posts = _postService.GetPosts(boardType, day, region, time);
 
             return View(posts);
         }

@@ -30,7 +30,8 @@ namespace Chingoo.Services.Home
                 Notices = _db.Notices.OrderByDescending(x => x.CreatedAt).Take(3).ToList(),
                 CommunityPosts = _db.CommunityPosts.OrderByDescending(x => x.CreatedAt).Take(5).ToList(),
                 RecommendedMatches = GetRecommendedPosts("축구 매치", null),
-                RecommendedMercenaries = GetRecommendedPosts("용병 모집", null)
+                RecommendedMercenaries = GetRecommendedPosts("용병 모집", null),
+                RecommendedTeamRecruits = GetRecommendedPosts("팀원 모집", null)
             };
 
             var currentUser = GetCurrentUser(principal);
@@ -46,6 +47,7 @@ namespace Chingoo.Services.Home
             model.BoardMenu.SoccerTemperature = currentUser.SoccerTemperature;
             model.RecommendedMatches = GetRecommendedPosts("축구 매치", currentUser);
             model.RecommendedMercenaries = GetRecommendedPosts("용병 모집", currentUser);
+            model.RecommendedTeamRecruits = GetRecommendedPosts("팀원 모집", currentUser);
 
             return model;
         }

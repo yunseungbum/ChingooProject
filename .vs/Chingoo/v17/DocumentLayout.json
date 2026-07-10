@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ChingooProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\services\\footballdata\\footballdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:services\\footballdata\\footballdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\controllers\\footballdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:controllers\\footballdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\services\\footballdata\\footballdataoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:services\\footballdata\\footballdataoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\services\\footballdata\\footballdatadtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:services\\footballdata\\footballdatadtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\notice\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -39,10 +55,6 @@
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\services\\home\\homeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:services\\home\\homeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -69,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -139,19 +147,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAwMzMzMzMfwA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-08T07:40:15.457Z",
+              "Title": "FootballDataService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\FootballData\\FootballDataService.cs",
+              "RelativeDocumentMoniker": "Services\\FootballData\\FootballDataService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\FootballData\\FootballDataService.cs",
+              "RelativeToolTip": "Services\\FootballData\\FootballDataService.cs",
+              "ViewState": "AgIAAFoAAAAAYmZmZmYYwG8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T00:45:56.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FootballDataController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Controllers\\FootballDataController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FootballDataController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Controllers\\FootballDataController.cs",
+              "RelativeToolTip": "Controllers\\FootballDataController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAyvRMAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T00:45:25.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FootballDataOptions.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\FootballData\\FootballDataOptions.cs",
+              "RelativeDocumentMoniker": "Services\\FootballData\\FootballDataOptions.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\FootballData\\FootballDataOptions.cs",
+              "RelativeToolTip": "Services\\FootballData\\FootballDataOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T00:41:40.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "FootballDataDtos.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\FootballData\\FootballDataDtos.cs",
+              "RelativeDocumentMoniker": "Services\\FootballData\\FootballDataDtos.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\FootballData\\FootballDataDtos.cs",
+              "RelativeToolTip": "Services\\FootballData\\FootballDataDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T00:41:36.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "INoticeService.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Notices\\INoticeService.cs",
               "RelativeDocumentMoniker": "Services\\Notices\\INoticeService.cs",
@@ -159,12 +206,11 @@
               "RelativeToolTip": "Services\\Notices\\INoticeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T07:38:55.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T07:38:55.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "NoticeService.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Notices\\NoticeService.cs",
               "RelativeDocumentMoniker": "Services\\Notices\\NoticeService.cs",
@@ -172,12 +218,11 @@
               "RelativeToolTip": "Services\\Notices\\NoticeService.cs",
               "ViewState": "AgIAAAUAAABAMzMzMzMqwA8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T07:39:00.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T07:39:00.161Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "NoticeController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Controllers\\NoticeController.cs",
               "RelativeDocumentMoniker": "Controllers\\NoticeController.cs",
@@ -185,12 +230,11 @@
               "RelativeToolTip": "Controllers\\NoticeController.cs",
               "ViewState": "AgIAAFwAAADAm5mZmZkbwG0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T07:38:44.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T07:38:44.247Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "CommunityController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Controllers\\CommunityController.cs",
               "RelativeDocumentMoniker": "Controllers\\CommunityController.cs",
@@ -198,25 +242,11 @@
               "RelativeToolTip": "Controllers\\CommunityController.cs",
               "ViewState": "AgIAAFcAAAAAZmZmZmYowGEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T07:26:09.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T07:26:09.318Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeService.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Home\\HomeService.cs",
-              "RelativeDocumentMoniker": "Services\\Home\\HomeService.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Home\\HomeService.cs",
-              "RelativeToolTip": "Services\\Home\\HomeService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBIAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T07:16:17.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -224,12 +254,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAADMAAADg//////8jwEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T07:14:53.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T07:14:53.492Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "AccountService.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Accounts\\AccountService.cs",
               "RelativeDocumentMoniker": "Services\\Accounts\\AccountService.cs",
@@ -237,12 +266,11 @@
               "RelativeToolTip": "Services\\Accounts\\AccountService.cs",
               "ViewState": "AgIAAAYAAADAzMzMzMwmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T06:46:20.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T06:46:20.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "IAccountService.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Accounts\\IAccountService.cs",
               "RelativeDocumentMoniker": "Services\\Accounts\\IAccountService.cs",
@@ -250,12 +278,11 @@
               "RelativeToolTip": "Services\\Accounts\\IAccountService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T06:44:08.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T06:44:08.095Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -263,12 +290,11 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAcAAADA//////8pwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T06:27:24.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T06:27:24.216Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\RegisterViewModel.cs",
@@ -276,25 +302,24 @@
               "RelativeToolTip": "ViewModels\\RegisterViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T05:57:01.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T05:57:01.755Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-07-08T05:02:39.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Community\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Community\\Create.cshtml",
@@ -302,12 +327,11 @@
               "RelativeToolTip": "Views\\Community\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-08T00:37:40.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-08T00:37:40.147Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
@@ -319,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -331,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "CommunityPost.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Models\\CommunityPost.cs",
               "RelativeDocumentMoniker": "Models\\CommunityPost.cs",
@@ -343,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Post.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Models\\Post.cs",
               "RelativeDocumentMoniker": "Models\\Post.cs",
@@ -351,12 +375,11 @@
               "RelativeToolTip": "Models\\Post.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAIwBwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-06T06:24:59.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-06T06:24:59.041Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "HomeViewModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\ViewModels\\HomeViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\HomeViewModel.cs",
@@ -364,12 +387,11 @@
               "RelativeToolTip": "ViewModels\\HomeViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-06T02:14:43.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-06T02:14:43.309Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Notice\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Notice\\Create.cshtml",
@@ -381,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Notice\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Notice\\Index.cshtml",
@@ -389,12 +411,11 @@
               "RelativeToolTip": "Views\\Notice\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-06T02:02:20.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-06T02:02:20.407Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -402,12 +423,11 @@
               "RelativeToolTip": "Data\\AppDbContext.cs",
               "ViewState": "AgIAAAgAAAAAmJmZmZn5vxoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-06T02:00:52.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-06T02:00:52.427Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Notice.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Models\\Notice.cs",
               "RelativeDocumentMoniker": "Models\\Notice.cs",
@@ -419,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "modal.js",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\js\\modal.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\modal.js",
@@ -431,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "account.css",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\account.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\account.css",
@@ -443,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "MyPage.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Account\\MyPage.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\MyPage.cshtml",
@@ -455,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "MyPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\ViewModels\\MyPageViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\MyPageViewModel.cs",
@@ -467,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "Default.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Shared\\Components\\Sidebar\\Default.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Components\\Sidebar\\Default.cshtml",
@@ -479,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Post\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Post\\Create.cshtml",
@@ -491,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "BoardOptions.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Common\\BoardOptions.cs",
               "RelativeDocumentMoniker": "Common\\BoardOptions.cs",
@@ -499,12 +519,11 @@
               "RelativeToolTip": "Common\\BoardOptions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T05:09:18.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-26T05:09:18.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -512,8 +531,7 @@
               "RelativeToolTip": "Controllers\\AccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T01:48:50.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-26T01:48:50.452Z"
             }
           ]
         }

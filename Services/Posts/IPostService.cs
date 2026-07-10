@@ -7,7 +7,7 @@ namespace Chingoo.Services.Posts
     {
         PostCreateViewModel GetCreateViewModel();
         Task CreatePostAsync(PostCreateViewModel model, int userId);
-        List<Post> GetPosts(string boardType, string day, string region);
+        List<Post> GetPosts(string boardType, string day, string region, string time);
         Task<Post?> GetPostDetailsAsync(int id);
         Task<bool> CanWriteReplyAsync(int postId, int userId);
     }

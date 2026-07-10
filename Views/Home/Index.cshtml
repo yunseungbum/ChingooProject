@@ -9,11 +9,9 @@
     <section class="board-content" aria-label="홈 게시판">
 
         <div class="card shadow-sm border-0">
-
             <div class="card-body p-0">
                 @await Html.PartialAsync("Partials/_NoticeBoard", Model.Notices)
             </div>
-
         </div>
 
         <div class="home-recommend-grid">
@@ -92,39 +90,105 @@
             </div>
         </div>
 
-        <div class="home-community-panel">
-            <div class="home-list-header">
-                <h5>커뮤니티</h5>
+        <div class="home-community-grid">
+            <div class="home-community-panel">
+                <div class="home-list-header">
+                    <h5>커뮤니티</h5>
 
-                <a asp-controller="Community"
-                   asp-action="Index">
-                    더보기
-                </a>
-            </div>
+                    <a asp-controller="Community"
+                       asp-action="Index">
+                        더보기
+                    </a>
+                </div>
 
-            <div class="home-list">
-                @if (!Model.CommunityPosts.Any())
-                {
-                    <div class="home-list-empty">
-                        등록된 커뮤니티 게시글이 없습니다.
-                    </div>
-                }
-                else
-                {
-                    foreach (var post in Model.CommunityPosts)
+                <div class="home-list">
+                    @if (!Model.CommunityPosts.Any())
                     {
-                        <a asp-controller="Community"
-                           asp-action="Details"
-                           asp-route-id="@post.Id"
-                           class="home-list-item">
-                            <span class="home-list-main">
-                                <span class="home-list-title">@post.Title</span>
-                            </span>
-                            <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
-                        </a>
+                        <div class="home-list-empty">
+                            등록된 커뮤니티 게시글이 없습니다.
+                        </div>
                     }
-                }
+                    else
+                    {
+                        foreach (var post in Model.CommunityPosts)
+                        {
+                            <a asp-controller="Community"
+                               asp-action="Details"
+                               asp-route-id="@post.Id"
+                               class="home-list-item">
+                                <span class="home-list-main">
+                                    <span class="home-list-title">@post.Title</span>
+                                </span>
+                                <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
+                            </a>
+                        }
+                    }
+                </div>
             </div>
+
+            <div class="home-list-panel">
+                <div class="home-list-header">
+                    <h5>추천 팀원 모집</h5>
+
+                    <a asp-controller="Post"
+                       asp-action="Index"
+                       asp-route-boardType="팀원 모집">
+                        더보기
+                    </a>
+                </div>
+
+                <div class="home-list">
+                    @if (!Model.RecommendedTeamRecruits.Any())
+                    {
+                        <div class="home-list-empty">
+                            조건에 맞는 팀원 모집 글이 없습니다.
+                        </div>
+                    }
+                    else
+                    {
+                        foreach (var post in Model.RecommendedTeamRecruits)
+                        {
+                            <a asp-controller="Post"
+                               asp-action="Details"
+                               asp-route-id="@post.Id"
+                               class="home-list-item">
+                                <span class="home-list-main">
+                                    <span class="home-list-title">@post.Title</span>
+                                    <span class="home-list-meta">@post.Region · @post.DayType · @post.TimeSlot</span>
+                                </span>
+                                <span class="home-list-date">@post.CreatedAt.ToString("MM.dd HH:mm")</span>
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="home-media-panel">
+            <section class="home-media-card worldcup-schedule-card" aria-label="월드컵 일정/결과">
+                <div class="home-list-header worldcup-schedule-header">
+                    <h5>월드컵 일정/결과</h5>
+                    <div class="worldcup-controls">
+                        <button type="button" id="worldcup-prev" class="worldcup-control-button" aria-label="이전 경기">&#8249;</button>
+                        <span id="worldcup-slide-count" class="home-media-count">-</span>
+                        <button type="button" id="worldcup-next" class="worldcup-control-button" aria-label="다음 경기">&#8250;</button>
+                    </div>
+                </div>
+
+                <div id="worldcup-schedule-slide" class="worldcup-schedule-slide">
+                    <div class="worldcup-empty">월드컵 일정을 불러오는 중입니다.</div>
+                </div>
+            </section>
+
+            <section class="home-media-card youtube-link-card" aria-label="유튜브 링크">
+                <div class="home-list-header">
+                    <h5>유튜브 링크</h5>
+                </div>
+
+                <div class="youtube-placeholder">
+                    유튜브 링크 영역
+                </div>
+            </section>
         </div>
 
     </section>

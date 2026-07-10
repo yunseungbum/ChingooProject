@@ -1,6 +1,7 @@
 ﻿using Chingoo.Data;
 using Chingoo.Services.Accounts;
 using Chingoo.Services.Comments;
+using Chingoo.Services.FootballData;
 using Chingoo.Services.Communities;
 using Chingoo.Services.Home;
 using Chingoo.Services.Notices;
@@ -22,6 +23,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddControllersWithViews();
 
 // Services
+builder.Services.Configure<FootballDataOptions>(builder.Configuration.GetSection("FootballData"));
+builder.Services.AddHttpClient<IFootballDataService, FootballDataService>((serviceProvider, client) =>
+{
+    var options = serviceProvider.GetRequiredService<Microsoft.Extensions.Options.IOptions<FootballDataOptions>>().Value;
+    client.BaseAddress = new Uri(options.BaseUrl.TrimEnd('/') + "/");
+});
 builder.Services.AddScoped<IHomeService, HomeService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
@@ -60,6 +67,8 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+app.MapControllers();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
@@ -68,3 +77,5 @@ app.MapControllerRoute(
 app.Run();
 
 public partial class Program { }
+
+
