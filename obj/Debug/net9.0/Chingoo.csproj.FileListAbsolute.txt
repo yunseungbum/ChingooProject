@@ -254,8 +254,8 @@ C:\Users\user\.codex\visualizations\2026\07\10\019f49ad-b1f7-76f0-8960-906f6a218
 C:\Users\user\.codex\visualizations\2026\07\10\019f49ad-b1f7-76f0-8960-906f6a21869f\verify-bin\Chingoo.dll
 C:\Users\user\.codex\visualizations\2026\07\10\019f49ad-b1f7-76f0-8960-906f6a21869f\verify-bin\Chingoo.pdb
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\qkyxcqx2p8-o3v9cys0hx.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ao7ghmgev0-nbx867ozsp.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2u1rgf99pm-aiivwnvp4j.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ao7ghmgev0-0b1wjo9bkg.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2u1rgf99pm-gykuwzotkg.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\y3aefafmzy-tzwjj3yixd.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\iiq0elrfpe-duh9f7up9x.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\hl90kappil-61n19gt1b8.gz

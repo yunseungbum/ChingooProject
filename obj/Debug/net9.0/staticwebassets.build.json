@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+wBeeYxWdFGmiDmQQGF/AO2h9NTndncNGIWKoG0eXw0=",
+  "Hash": "diml0zmCo1T2LEBozhcyI+dR1sPFDuYWQynq4lUIUYI=",
   "Source": "Chingoo",
   "BasePath": "_content/Chingoo",
   "Mode": "Default",
@@ -122,12 +122,12 @@
       "OriginalItemSpec": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\scopedcss\\bundle\\Chingoo.styles.css"
     },
     {
-      "Identity": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-aiivwnvp4j.gz",
+      "Identity": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-gykuwzotkg.gz",
       "SourceId": "Chingoo",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Chingoo",
-      "RelativePath": "css/notice#[.{fingerprint=aiivwnvp4j}]?.css.gz",
+      "RelativePath": "css/notice#[.{fingerprint=gykuwzotkg}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -136,8 +136,8 @@
       "RelatedAsset": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\notice.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "3jwtm667ub",
-      "Integrity": "Eehum5Bn/lf8zT4YyZJcSkM8rgF/FHLxyaEFU9awXzg=",
+      "Fingerprint": "ptfqaqtsx7",
+      "Integrity": "Y2vnHVwlqMyDZUXecLZY0Cs7XHzq5zUv41M5oCJZK98=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\notice.css"
@@ -395,12 +395,12 @@
       "OriginalItemSpec": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-nbx867ozsp.gz",
+      "Identity": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-0b1wjo9bkg.gz",
       "SourceId": "Chingoo",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Chingoo",
-      "RelativePath": "css/home#[.{fingerprint=nbx867ozsp}]?.css.gz",
+      "RelativePath": "css/home#[.{fingerprint=0b1wjo9bkg}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -409,8 +409,8 @@
       "RelatedAsset": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\home.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "7kqm7ihe7r",
-      "Integrity": "964tkgh8TKswyAHxRxa0OAd2OUM0H7sDUphWEyUN9cY=",
+      "Fingerprint": "exkorm6uit",
+      "Integrity": "Do3EVdZW8ZiClNoZwyfyqM9V5jKWp3fcL9d/T5uiP/U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\home.css"
@@ -1543,8 +1543,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "nbx867ozsp",
-      "Integrity": "TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI=",
+      "Fingerprint": "0b1wjo9bkg",
+      "Integrity": "ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
@@ -1564,8 +1564,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "aiivwnvp4j",
-      "Integrity": "cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug=",
+      "Fingerprint": "gykuwzotkg",
+      "Integrity": "aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\notice.css"
@@ -2962,7 +2962,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3015,7 +3015,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3052,7 +3052,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3099,7 +3099,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3160,7 +3160,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3205,7 +3205,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3260,7 +3260,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3321,7 +3321,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3366,7 +3366,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3421,7 +3421,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3474,7 +3474,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3511,7 +3511,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:46:26 GMT"
+          "Value": "Fri, 10 Jul 2026 01:56:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3832,13 +3832,13 @@
       ]
     },
     {
-      "Route": "css/home.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-nbx867ozsp.gz",
+      "Route": "css/home.0b1wjo9bkg.css",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-0b1wjo9bkg.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000469263257"
+          "Quality": "0.000389105058"
         }
       ],
       "ResponseHeaders": [
@@ -3848,19 +3848,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2130"
+          "Value": "2569"
         },
         {
           "Name": "ETag",
-          "Value": "\"964tkgh8TKswyAHxRxa0OAd2OUM0H7sDUphWEyUN9cY=\""
+          "Value": "\"Do3EVdZW8ZiClNoZwyfyqM9V5jKWp3fcL9d/T5uiP/U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:43:01 GMT"
+          "Value": "Fri, 10 Jul 2026 01:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -3876,18 +3876,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI=\""
+          "Value": "W/\"ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "0b1wjo9bkg"
+        },
+        {
+          "Name": "label",
+          "Value": "css/home.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI="
+          "Value": "sha256-ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk="
         }
       ]
     },
     {
-      "Route": "css/home.css",
+      "Route": "css/home.0b1wjo9bkg.css",
       "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\home.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3897,7 +3905,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12386"
+          "Value": "14695"
         },
         {
           "Name": "Content-Type",
@@ -3905,121 +3913,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI=\""
+          "Value": "\"ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:43:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css.gz",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-nbx867ozsp.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2130"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"964tkgh8TKswyAHxRxa0OAd2OUM0H7sDUphWEyUN9cY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:43:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-964tkgh8TKswyAHxRxa0OAd2OUM0H7sDUphWEyUN9cY="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.nbx867ozsp.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-nbx867ozsp.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000469263257"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2130"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"964tkgh8TKswyAHxRxa0OAd2OUM0H7sDUphWEyUN9cY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:43:01 GMT"
+          "Value": "Fri, 10 Jul 2026 01:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "nbx867ozsp"
+          "Value": "0b1wjo9bkg"
         },
         {
           "Name": "label",
@@ -4027,13 +3935,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI="
+          "Value": "sha256-ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk="
         }
       ]
     },
     {
-      "Route": "css/home.nbx867ozsp.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\home.css",
+      "Route": "css/home.0b1wjo9bkg.css.gz",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-0b1wjo9bkg.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4042,7 +3950,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12386"
+          "Value": "2569"
         },
         {
           "Name": "Content-Type",
@@ -4050,56 +3958,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI=\""
+          "Value": "\"Do3EVdZW8ZiClNoZwyfyqM9V5jKWp3fcL9d/T5uiP/U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:43:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "nbx867ozsp"
-        },
-        {
-          "Name": "label",
-          "Value": "css/home.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-TSNpudOeIsPBnMXwwhWHFK6dRuWQd5rI6oyve42T+sI="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.nbx867ozsp.css.gz",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-nbx867ozsp.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2130"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"964tkgh8TKswyAHxRxa0OAd2OUM0H7sDUphWEyUN9cY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 10 Jul 2026 01:43:01 GMT"
+          "Value": "Fri, 10 Jul 2026 01:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4117,7 +3980,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "nbx867ozsp"
+          "Value": "0b1wjo9bkg"
         },
         {
           "Name": "label",
@@ -4125,18 +3988,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-964tkgh8TKswyAHxRxa0OAd2OUM0H7sDUphWEyUN9cY="
+          "Value": "sha256-Do3EVdZW8ZiClNoZwyfyqM9V5jKWp3fcL9d/T5uiP/U="
         }
       ]
     },
     {
-      "Route": "css/notice.aiivwnvp4j.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-aiivwnvp4j.gz",
+      "Route": "css/home.css",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-0b1wjo9bkg.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002044989775"
+          "Quality": "0.000389105058"
         }
       ],
       "ResponseHeaders": [
@@ -4146,19 +4009,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "488"
+          "Value": "2569"
         },
         {
           "Name": "ETag",
-          "Value": "\"Eehum5Bn/lf8zT4YyZJcSkM8rgF/FHLxyaEFU9awXzg=\""
+          "Value": "\"Do3EVdZW8ZiClNoZwyfyqM9V5jKWp3fcL9d/T5uiP/U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jul 2026 02:54:40 GMT"
+          "Value": "Fri, 10 Jul 2026 01:55:46 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -4174,26 +4037,155 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug=\""
+          "Value": "W/\"ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "aiivwnvp4j"
-        },
-        {
-          "Name": "label",
-          "Value": "css/notice.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug="
+          "Value": "sha256-ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk="
         }
       ]
     },
     {
-      "Route": "css/notice.aiivwnvp4j.css",
+      "Route": "css/home.css",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14695"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jul 2026 01:55:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZI566ErTmmTw9yIakLn1/hYhQags+Y/fQzNX+f2ZlLk="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.css.gz",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\ao7ghmgev0-0b1wjo9bkg.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2569"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Do3EVdZW8ZiClNoZwyfyqM9V5jKWp3fcL9d/T5uiP/U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jul 2026 01:55:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Do3EVdZW8ZiClNoZwyfyqM9V5jKWp3fcL9d/T5uiP/U="
+        }
+      ]
+    },
+    {
+      "Route": "css/notice.css",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-gykuwzotkg.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001869158879"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "534"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y2vnHVwlqMyDZUXecLZY0Cs7XHzq5zUv41M5oCJZK98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jul 2026 01:53:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0="
+        }
+      ]
+    },
+    {
+      "Route": "css/notice.css",
       "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\notice.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4203,7 +4195,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1350"
+          "Value": "1417"
         },
         {
           "Name": "Content-Type",
@@ -4211,11 +4203,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug=\""
+          "Value": "\"aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jul 2026 02:54:40 GMT"
+          "Value": "Fri, 10 Jul 2026 01:53:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0="
+        }
+      ]
+    },
+    {
+      "Route": "css/notice.css.gz",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-gykuwzotkg.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y2vnHVwlqMyDZUXecLZY0Cs7XHzq5zUv41M5oCJZK98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jul 2026 01:53:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y2vnHVwlqMyDZUXecLZY0Cs7XHzq5zUv41M5oCJZK98="
+        }
+      ]
+    },
+    {
+      "Route": "css/notice.gykuwzotkg.css",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-gykuwzotkg.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001869158879"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "534"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y2vnHVwlqMyDZUXecLZY0Cs7XHzq5zUv41M5oCJZK98=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jul 2026 01:53:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gykuwzotkg"
+        },
+        {
+          "Name": "label",
+          "Value": "css/notice.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0="
+        }
+      ]
+    },
+    {
+      "Route": "css/notice.gykuwzotkg.css",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\notice.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 10 Jul 2026 01:53:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4225,7 +4362,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "aiivwnvp4j"
+          "Value": "gykuwzotkg"
         },
         {
           "Name": "label",
@@ -4233,13 +4370,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug="
+          "Value": "sha256-aO62n8cDTgTj0lsgqd+WfTYj7JxVzf69t+wZwm/eRi0="
         }
       ]
     },
     {
-      "Route": "css/notice.aiivwnvp4j.css.gz",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-aiivwnvp4j.gz",
+      "Route": "css/notice.gykuwzotkg.css.gz",
+      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-gykuwzotkg.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4248,7 +4385,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "488"
+          "Value": "534"
         },
         {
           "Name": "Content-Type",
@@ -4256,11 +4393,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Eehum5Bn/lf8zT4YyZJcSkM8rgF/FHLxyaEFU9awXzg=\""
+          "Value": "\"Y2vnHVwlqMyDZUXecLZY0Cs7XHzq5zUv41M5oCJZK98=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 06 Jul 2026 02:54:40 GMT"
+          "Value": "Fri, 10 Jul 2026 01:53:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4278,7 +4415,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "aiivwnvp4j"
+          "Value": "gykuwzotkg"
         },
         {
           "Name": "label",
@@ -4286,144 +4423,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Eehum5Bn/lf8zT4YyZJcSkM8rgF/FHLxyaEFU9awXzg="
-        }
-      ]
-    },
-    {
-      "Route": "css/notice.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-aiivwnvp4j.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.002044989775"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "488"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Eehum5Bn/lf8zT4YyZJcSkM8rgF/FHLxyaEFU9awXzg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 06 Jul 2026 02:54:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug="
-        }
-      ]
-    },
-    {
-      "Route": "css/notice.css",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\css\\notice.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1350"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 06 Jul 2026 02:54:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-cnsGFmlubgxojDZLXDCk5W11/3SID4nLFYX3TO+YIug="
-        }
-      ]
-    },
-    {
-      "Route": "css/notice.css.gz",
-      "AssetFile": "C:\\Users\\user\\Desktop\\ChingooProject\\obj\\Debug\\net9.0\\compressed\\2u1rgf99pm-aiivwnvp4j.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "488"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Eehum5Bn/lf8zT4YyZJcSkM8rgF/FHLxyaEFU9awXzg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 06 Jul 2026 02:54:40 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Eehum5Bn/lf8zT4YyZJcSkM8rgF/FHLxyaEFU9awXzg="
+          "Value": "sha256-Y2vnHVwlqMyDZUXecLZY0Cs7XHzq5zUv41M5oCJZK98="
         }
       ]
     },

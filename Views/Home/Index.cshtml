@@ -15,9 +15,12 @@
         </div>
 
         <div class="home-recommend-grid">
-            <div class="home-list-panel">
+            <div class="home-list-panel panel-match">
                 <div class="home-list-header">
-                    <h5>추천 축구 매치</h5>
+                    <h5>
+                        <span class="home-panel-icon" aria-hidden="true">⚽</span>
+                        추천 축구 매치
+                    </h5>
 
                     <a asp-controller="Post"
                        asp-action="Index"
@@ -52,9 +55,12 @@
                 </div>
             </div>
 
-            <div class="home-list-panel">
+            <div class="home-list-panel panel-mercenary">
                 <div class="home-list-header">
-                    <h5>추천 용병 모집</h5>
+                    <h5>
+                        <span class="home-panel-icon" aria-hidden="true">★</span>
+                        추천 용병 모집
+                    </h5>
 
                     <a asp-controller="Post"
                        asp-action="Index"
@@ -91,9 +97,12 @@
         </div>
 
         <div class="home-community-grid">
-            <div class="home-community-panel">
+            <div class="home-community-panel panel-community">
                 <div class="home-list-header">
-                    <h5>커뮤니티</h5>
+                    <h5>
+                        <span class="home-panel-icon" aria-hidden="true">#</span>
+                        커뮤니티
+                    </h5>
 
                     <a asp-controller="Community"
                        asp-action="Index">
@@ -126,9 +135,12 @@
                 </div>
             </div>
 
-            <div class="home-list-panel">
+            <div class="home-list-panel panel-team">
                 <div class="home-list-header">
-                    <h5>추천 팀원 모집</h5>
+                    <h5>
+                        <span class="home-panel-icon" aria-hidden="true">+</span>
+                        추천 팀원 모집
+                    </h5>
 
                     <a asp-controller="Post"
                        asp-action="Index"
@@ -167,7 +179,10 @@
         <div class="home-media-panel">
             <section class="home-media-card worldcup-schedule-card" aria-label="월드컵 일정/결과">
                 <div class="home-list-header worldcup-schedule-header">
-                    <h5>월드컵 일정/결과</h5>
+                    <h5>
+                        <span class="home-media-icon trophy-icon" aria-hidden="true">🏆</span>
+                        월드컵 일정/결과
+                    </h5>
                     <div class="worldcup-controls">
                         <button type="button" id="worldcup-prev" class="worldcup-control-button" aria-label="이전 경기">&#8249;</button>
                         <span id="worldcup-slide-count" class="home-media-count">-</span>
@@ -182,7 +197,10 @@
 
             <section class="home-media-card youtube-link-card" aria-label="유튜브 링크">
                 <div class="home-list-header">
-                    <h5>유튜브 링크</h5>
+                    <h5>
+                        <span class="home-media-icon youtube-icon" aria-hidden="true"></span>
+                        유튜브 링크
+                    </h5>
                 </div>
 
                 <div class="youtube-placeholder">
