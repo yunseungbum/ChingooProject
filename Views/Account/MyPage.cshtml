@@ -41,6 +41,30 @@
             </div>
 
             <div class="mb-3">
+                <label asp-for="PreferredDayType" class="form-label"></label>
+                <select asp-for="PreferredDayType" class="form-select">
+                    <option value="상관없음">상관없음</option>
+                    @foreach (var day in Model.Days)
+                    {
+                            <option value="@day">@day</option>
+                    }
+                </select>
+                <span asp-validation-for="PreferredDayType" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PreferredTimeSlot" class="form-label"></label>
+                <select asp-for="PreferredTimeSlot" class="form-select">
+                    <option value="상관없음">상관없음</option>
+                    @foreach (var time in Model.Times)
+                    {
+                            <option value="@time">@time</option>
+                    }
+                </select>
+                <span asp-validation-for="PreferredTimeSlot" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
                 <label asp-for="SoccerTemperature" class="form-label"></label>
                 <input value="@Model.SoccerTemperature" class="form-control readonly-info" disabled />
             </div>

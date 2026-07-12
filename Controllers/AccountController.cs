@@ -158,7 +158,7 @@ public class AccountController : Controller
 
         TempData["Message"] = "내정보가 수정되었습니다.";
 
-        return RedirectToAction("MyPage");
+        return RedirectToAction("Index", "Home");
     }
 
     private bool TryGetCurrentUserId(out int userId)

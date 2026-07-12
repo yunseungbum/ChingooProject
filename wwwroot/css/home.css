@@ -504,6 +504,83 @@
     font-size: 0.86rem;
 }
 
+.youtube-video-slide {
+    position: relative;
+    min-height: 190px;
+    padding: 12px;
+}
+
+.youtube-video-item {
+    display: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+.youtube-video-item.is-active {
+    display: block;
+}
+
+.youtube-thumbnail-wrap {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #111827;
+}
+
+.youtube-thumbnail-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.youtube-play-mark {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 42px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(255, 0, 51, 0.94);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.22);
+}
+
+.youtube-play-mark::before {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 11px solid #fff;
+}
+
+.youtube-video-body {
+    display: grid;
+    gap: 4px;
+    padding-top: 10px;
+}
+
+.youtube-video-body strong {
+    color: #111827;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.youtube-video-body span {
+    color: #6b7280;
+    font-size: 0.78rem;
+}
+
 @media (max-width: 768px) {
     .home-media-panel {
         grid-template-columns: 1fr;
@@ -536,6 +613,11 @@
 
     .worldcup-meta {
         font-size: 0.7rem;
+    }
+
+    .youtube-video-slide {
+        min-height: 170px;
+        padding: 10px;
     }
 }
 /* World Cup schedule display */
@@ -680,6 +762,12 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.youtube-controls {
+    flex: 0 0 auto;
 }
 
 .worldcup-control-button {

@@ -2,6 +2,7 @@ using System.Security.Claims;
 using Chingoo.Common;
 using Chingoo.Data;
 using Chingoo.Models;
+using Chingoo.Services.Youtube;
 using Chingoo.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,13 +11,15 @@ namespace Chingoo.Services.Home
     public class HomeService : IHomeService
     {
         private readonly AppDbContext _db;
+        private readonly IYoutubeFeedService _youtubeFeedService;
 
-        public HomeService(AppDbContext db)
+        public HomeService(AppDbContext db, IYoutubeFeedService youtubeFeedService)
         {
             _db = db;
+            _youtubeFeedService = youtubeFeedService;
         }
 
-        public HomeViewModel GetHomeViewModel(ClaimsPrincipal principal)
+        public async Task<HomeViewModel> GetHomeViewModelAsync(ClaimsPrincipal principal, CancellationToken cancellationToken = default)
         {
             var model = new HomeViewModel
             {
@@ -29,6 +32,7 @@ namespace Chingoo.Services.Home
                 },
                 Notices = _db.Notices.OrderByDescending(x => x.CreatedAt).Take(3).ToList(),
                 CommunityPosts = _db.CommunityPosts.OrderByDescending(x => x.CreatedAt).Take(5).ToList(),
+                YoutubeVideos = await _youtubeFeedService.GetLatestVideosAsync(cancellationToken),
                 RecommendedMatches = GetRecommendedPosts("축구 매치", null),
                 RecommendedMercenaries = GetRecommendedPosts("용병 모집", null),
                 RecommendedTeamRecruits = GetRecommendedPosts("팀원 모집", null)

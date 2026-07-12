@@ -38,6 +38,76 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const slideContainer = document.getElementById("youtube-video-slide");
+    const slideCount = document.getElementById("youtube-slide-count");
+    const prevButton = document.getElementById("youtube-prev");
+    const nextButton = document.getElementById("youtube-next");
+
+    if (!slideContainer || !slideCount) {
+        return;
+    }
+
+    startYoutubeVideoSlider(slideContainer, slideCount, prevButton, nextButton);
+});
+
+function startYoutubeVideoSlider(container, counter, prevButton, nextButton) {
+    const videos = Array.from(container.querySelectorAll(".youtube-video-item"));
+
+    if (!videos.length) {
+        counter.textContent = "0/0";
+        setWorldCupControlsDisabled(prevButton, nextButton, true);
+        return;
+    }
+
+    setWorldCupControlsDisabled(prevButton, nextButton, videos.length <= 1);
+
+    let currentIndex = 0;
+    let autoSlideTimer = null;
+    let resumeTimer = null;
+
+    const renderCurrentVideo = () => {
+        videos.forEach((video, index) => {
+            video.classList.toggle("is-active", index === currentIndex);
+        });
+        counter.textContent = `${currentIndex + 1}/${videos.length}`;
+    };
+
+    const showNextVideo = () => {
+        currentIndex = currentIndex + 1 >= videos.length ? 0 : currentIndex + 1;
+        renderCurrentVideo();
+    };
+
+    const showPreviousVideo = () => {
+        currentIndex = currentIndex - 1 < 0 ? videos.length - 1 : currentIndex - 1;
+        renderCurrentVideo();
+    };
+
+    const startAutoSlide = () => {
+        window.clearInterval(autoSlideTimer);
+        autoSlideTimer = window.setInterval(showNextVideo, 5000);
+    };
+
+    const pauseThenResumeAutoSlide = () => {
+        window.clearInterval(autoSlideTimer);
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(startAutoSlide, 2000);
+    };
+
+    prevButton?.addEventListener("click", () => {
+        showPreviousVideo();
+        pauseThenResumeAutoSlide();
+    });
+
+    nextButton?.addEventListener("click", () => {
+        showNextVideo();
+        pauseThenResumeAutoSlide();
+    });
+
+    renderCurrentVideo();
+    startAutoSlide();
+}
+
 function groupWorldCupMatchesByDate(matches) {
     return matches.reduce((groups, match) => {
         const dateKey = match.dateText || formatWorldCupDate(match.koreaDate);

@@ -17,9 +17,9 @@ namespace Chingoo.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(CancellationToken cancellationToken)
         {
-            return View(_homeService.GetHomeViewModel(User));
+            return View(await _homeService.GetHomeViewModelAsync(User, cancellationToken));
         }
 
         public IActionResult Privacy()

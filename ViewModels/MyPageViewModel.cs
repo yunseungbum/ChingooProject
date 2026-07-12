@@ -19,6 +19,16 @@ namespace Chingoo.ViewModels
         [Display(Name = "지역")]
         public string Region { get; set; } = string.Empty;
 
+        [Required(ErrorMessage = "활동 가능 요일을 선택해주세요.")]
+        [StringLength(20)]
+        [Display(Name = "활동 가능 요일")]
+        public string PreferredDayType { get; set; } = "상관없음";
+
+        [Required(ErrorMessage = "선호 시간대를 선택해주세요.")]
+        [StringLength(20)]
+        [Display(Name = "선호 시간대")]
+        public string PreferredTimeSlot { get; set; } = "상관없음";
+
         [Display(Name = "축구 온도")]
         public int SoccerTemperature { get; set; }
 
@@ -26,6 +36,8 @@ namespace Chingoo.ViewModels
         public DateTime CreatedAt { get; set; }
 
         public IEnumerable<string> Regions { get; set; } = new List<string>();
+        public IEnumerable<string> Days { get; set; } = new List<string>();
+        public IEnumerable<string> Times { get; set; } = new List<string>();
 
         [DataType(DataType.Password)]
         [Display(Name = "현재 비밀번호")]

@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ChingooProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\viewmodels\\youtubevideoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:viewmodels\\youtubevideoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\services\\youtube\\iyoutubefeedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:services\\youtube\\iyoutubefeedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|c:\\users\\user\\desktop\\chingooproject\\views\\notice\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{57B2F02B-275A-414F-B923-96B7AA186CF3}|Chingoo.csproj|solutionrelative:views\\notice\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -26,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +46,57 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAmwCgAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T06:16:04.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IYoutubeFeedService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Youtube\\IYoutubeFeedService.cs",
+              "RelativeDocumentMoniker": "Services\\Youtube\\IYoutubeFeedService.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Youtube\\IYoutubeFeedService.cs",
+              "RelativeToolTip": "Services\\Youtube\\IYoutubeFeedService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T06:13:38.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "YoutubeVideoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\ViewModels\\YoutubeVideoViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\YoutubeVideoViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\ViewModels\\YoutubeVideoViewModel.cs",
+              "RelativeToolTip": "ViewModels\\YoutubeVideoViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T06:13:06.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Notice\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Notice\\Edit.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Notice\\Edit.cshtml",
               "RelativeToolTip": "Views\\Notice\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-10T05:50:35.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-10T05:50:35.676Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Views\\Notice\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Notice\\Details.cshtml",
@@ -55,12 +104,11 @@
               "RelativeToolTip": "Views\\Notice\\Details.cshtml",
               "ViewState": "AgIAAAYAAACgzMzMzMwkwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-10T05:46:18.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-10T05:46:18.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "NoticeController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Controllers\\NoticeController.cs",
               "RelativeDocumentMoniker": "Controllers\\NoticeController.cs",
@@ -68,12 +116,11 @@
               "RelativeToolTip": "Controllers\\NoticeController.cs",
               "ViewState": "AgIAAIYAAACA//////8twJQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-10T05:45:50.118Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-10T05:45:50.118Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "NoticeService.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\ChingooProject\\Services\\Notices\\NoticeService.cs",
               "RelativeDocumentMoniker": "Services\\Notices\\NoticeService.cs",
@@ -81,8 +128,7 @@
               "RelativeToolTip": "Services\\Notices\\NoticeService.cs",
               "ViewState": "AgIAADIAAACANDMzMzMTwD8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-10T05:44:57.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-10T05:44:57.668Z"
             }
           ]
         }

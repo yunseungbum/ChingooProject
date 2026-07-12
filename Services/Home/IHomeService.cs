@@ -5,6 +5,6 @@ namespace Chingoo.Services.Home
 {
     public interface IHomeService
     {
-        HomeViewModel GetHomeViewModel(ClaimsPrincipal user);
+        Task<HomeViewModel> GetHomeViewModelAsync(ClaimsPrincipal user, CancellationToken cancellationToken = default);
     }
 }

@@ -183,7 +183,7 @@
                         <span class="home-media-icon trophy-icon" aria-hidden="true">🏆</span>
                         월드컵 일정/결과
                     </h5>
-                    <div class="worldcup-controls">
+                    <div class="worldcup-controls youtube-controls">
                         <button type="button" id="worldcup-prev" class="worldcup-control-button" aria-label="이전 경기">&#8249;</button>
                         <span id="worldcup-slide-count" class="home-media-count">-</span>
                         <button type="button" id="worldcup-next" class="worldcup-control-button" aria-label="다음 경기">&#8250;</button>
@@ -195,16 +195,48 @@
                 </div>
             </section>
 
-            <section class="home-media-card youtube-link-card" aria-label="유튜브 링크">
+            <section class="home-media-card youtube-link-card" aria-label="유튜브 최신 영상">
                 <div class="home-list-header">
                     <h5>
                         <span class="home-media-icon youtube-icon" aria-hidden="true"></span>
-                        유튜브 링크
+                        유튜브 최신 영상
                     </h5>
+                    <div class="worldcup-controls">
+                        <button type="button" id="youtube-prev" class="worldcup-control-button" aria-label="이전 영상">&#8249;</button>
+                        <span id="youtube-slide-count" class="home-media-count">-</span>
+                        <button type="button" id="youtube-next" class="worldcup-control-button" aria-label="다음 영상">&#8250;</button>
+                    </div>
                 </div>
 
-                <div class="youtube-placeholder">
-                    유튜브 링크 영역
+                <div id="youtube-video-slide" class="youtube-video-slide">
+                    @if (!Model.YoutubeVideos.Any())
+                    {
+                        <div class="youtube-placeholder">
+                            유튜브 영상을 불러오지 못했습니다.
+                        </div>
+                    }
+                    else
+                    {
+                        foreach (var video in Model.YoutubeVideos)
+                        {
+                            <a href="@video.VideoUrl"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="youtube-video-item">
+                                <span class="youtube-thumbnail-wrap">
+                                    <img src="@video.ThumbnailUrl" alt="@video.Title" loading="lazy" />
+                                    <span class="youtube-play-mark" aria-hidden="true"></span>
+                                </span>
+                                <span class="youtube-video-body">
+                                    @if (!string.IsNullOrWhiteSpace(video.Title))
+                                    {
+                                        <strong>@video.Title</strong>
+                                    }
+                                    <span>@video.ChannelName · @video.PublishedAt.ToString("MM.dd")</span>
+                                </span>
+                            </a>
+                        }
+                    }
                 </div>
             </section>
         </div>

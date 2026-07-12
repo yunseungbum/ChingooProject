@@ -8,6 +8,7 @@ using Chingoo.Services.Notices;
 using Chingoo.Services.Posts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Chingoo.Services.Youtube;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,10 +25,16 @@ builder.Services.AddControllersWithViews();
 
 // Services
 builder.Services.Configure<FootballDataOptions>(builder.Configuration.GetSection("FootballData"));
+builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient<IFootballDataService, FootballDataService>((serviceProvider, client) =>
 {
     var options = serviceProvider.GetRequiredService<Microsoft.Extensions.Options.IOptions<FootballDataOptions>>().Value;
     client.BaseAddress = new Uri(options.BaseUrl.TrimEnd('/') + "/");
+});
+builder.Services.AddHttpClient<IYoutubeFeedService, YoutubeFeedService>(client =>
+{
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 ChingooProject/1.0");
+    client.DefaultRequestHeaders.AcceptLanguage.ParseAdd("ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
 });
 builder.Services.AddScoped<IHomeService, HomeService>();
 builder.Services.AddScoped<ICommentService, CommentService>();

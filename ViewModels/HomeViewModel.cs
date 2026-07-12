@@ -10,5 +10,6 @@ namespace Chingoo.ViewModels
         public List<Post> RecommendedMatches { get; set; } = new();
         public List<Post> RecommendedMercenaries { get; set; } = new();
         public List<Post> RecommendedTeamRecruits { get; set; } = new();
+        public List<YoutubeVideoViewModel> YoutubeVideos { get; set; } = new();
     }
 }

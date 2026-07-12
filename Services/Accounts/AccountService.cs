@@ -95,9 +95,13 @@ namespace Chingoo.Services.Accounts
                 TeamName = user.TeamName,
                 Email = user.Email,
                 Region = user.Region,
+                PreferredDayType = user.PreferredDayType,
+                PreferredTimeSlot = user.PreferredTimeSlot,
                 SoccerTemperature = user.SoccerTemperature,
                 CreatedAt = user.CreatedAt,
-                Regions = BoardOptions.Regions
+                Regions = BoardOptions.Regions,
+                Days = BoardOptions.Days,
+                Times = BoardOptions.Times
             };
         }
 
@@ -111,9 +115,12 @@ namespace Chingoo.Services.Accounts
             }
 
             model.LoginId = user.LoginId;
+            model.TeamName = user.TeamName;
             model.SoccerTemperature = user.SoccerTemperature;
             model.CreatedAt = user.CreatedAt;
             model.Regions = BoardOptions.Regions;
+            model.Days = BoardOptions.Days;
+            model.Times = BoardOptions.Times;
         }
 
         public async Task<(bool Success, User? User, string? ErrorMessage)> UpdateMyPageAsync(int userId, MyPageViewModel model)
@@ -128,6 +135,8 @@ namespace Chingoo.Services.Accounts
             user.TeamName = model.TeamName;
             user.Email = model.Email;
             user.Region = model.Region;
+            user.PreferredDayType = model.PreferredDayType;
+            user.PreferredTimeSlot = model.PreferredTimeSlot;
 
             var wantsPasswordChange =
                 !string.IsNullOrWhiteSpace(model.NewPassword) ||
