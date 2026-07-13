@@ -4,6 +4,23 @@
 // Write your JavaScript code.
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-history-action]").forEach((button) => {
+        button.addEventListener("click", () => {
+            const action = button.getAttribute("data-history-action");
+
+            if (action === "back") {
+                window.history.back();
+                return;
+            }
+
+            if (action === "forward") {
+                window.history.forward();
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     const slideContainer = document.getElementById("worldcup-schedule-slide");
     const slideCount = document.getElementById("worldcup-slide-count");
     const prevButton = document.getElementById("worldcup-prev");
