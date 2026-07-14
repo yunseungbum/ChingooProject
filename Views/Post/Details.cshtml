@@ -15,9 +15,9 @@
 
     <div class="card-body">
 
+        <div class="d-flex justify-content-end gap-2 mb-3">
         @if (isPostAuthor)
         {
-            <div class="d-flex justify-content-end gap-2 mb-3">
                 <a asp-action="Edit"
                    asp-route-id="@Model.Id"
                    class="btn btn-outline-primary btn-sm">
@@ -34,8 +34,20 @@
                         삭제
                     </button>
                 </form>
-            </div>
         }
+        else
+        {
+                <form asp-controller="Chat"
+                      asp-action="StartFromPost"
+                      method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="postId" value="@Model.Id" />
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        채팅하기
+                    </button>
+                </form>
+        }
+        </div>
 
         <h3 class="mb-3">@Model.Title</h3>
 

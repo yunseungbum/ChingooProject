@@ -1,0 +1,49 @@
+@model Chingoo.ViewModels.ChatListViewModel
+
+@{
+    ViewData["Title"] = "채팅";
+}
+
+<section class="chat-page chat-list-page"
+         data-current-user-id="@Model.CurrentUserId">
+    <div class="chat-panel chat-list-panel">
+        <header class="chat-header">
+            <div>
+                <h2>채팅</h2>
+                <p>참여 중인 대화방을 선택하세요.</p>
+            </div>
+        </header>
+
+        @if (!Model.Rooms.Any())
+        {
+            <div id="chatListEmpty" class="chat-messages">
+                <div class="chat-empty">아직 참여 중인 채팅방이 없습니다.</div>
+            </div>
+        }
+
+        <div id="chatRoomList" class="chat-room-list">
+            @foreach (var room in Model.Rooms)
+            {
+                <a asp-action="Room"
+                   asp-route-id="@room.RoomId"
+                   class="chat-room-item"
+                   data-room-id="@room.RoomId">
+                    <div class="chat-room-main">
+                        <strong>@room.RecipientTeamName</strong>
+                        <span>@room.PostTitle</span>
+                        <p>@room.LastMessage</p>
+                    </div>
+
+                    @if (room.LastMessageAt.HasValue)
+                    {
+                        <time>@room.LastMessageAt.Value.ToString("MM.dd HH:mm")</time>
+                    }
+                </a>
+            }
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/chat-list.js" asp-append-version="true"></script>
+}

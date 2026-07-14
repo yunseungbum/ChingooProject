@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/notice.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/chat.css" asp-append-version="true" />
 </head>
 
 <body>
@@ -50,6 +51,12 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
+                        <a asp-controller="Chat"
+                           asp-action="Index"
+                           class="nav-link-custom">
+                            채팅
+                        </a>
+
                         <a asp-controller="Account"
                            asp-action="MyPage"
                            class="nav-link-custom">

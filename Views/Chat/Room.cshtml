@@ -1,0 +1,77 @@
+@model Chingoo.ViewModels.ChatRoomViewModel
+
+@{
+    ViewData["Title"] = "채팅";
+}
+
+<section class="chat-page"
+         data-room-id="@Model.RoomId"
+         data-current-user-id="@Model.CurrentUserId">
+    <div class="chat-panel">
+        <header class="chat-header">
+            <div>
+                <h2>@Model.RecipientTeamName</h2>
+                <p>@Model.PostTitle</p>
+            </div>
+
+            <div class="chat-header-actions">
+                <span id="chatStatus" class="chat-status">연결 준비</span>
+
+                <form asp-action="Leave"
+                      asp-route-id="@Model.RoomId"
+                      method="post"
+                      onsubmit="return confirm('채팅방을 나가면 대화 내용이 삭제됩니다. 나가시겠습니까?');">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="chat-leave-button">나가기</button>
+                </form>
+            </div>
+        </header>
+
+        <div id="chatMessages" class="chat-messages" aria-live="polite">
+            @if (!Model.Messages.Any())
+            {
+                <div class="chat-empty">
+                    아직 표시할 메시지가 없습니다.
+                </div>
+            }
+            else
+            {
+                foreach (var message in Model.Messages)
+                {
+                    <article class="chat-message @(message.IsMine ? "mine" : "theirs")"
+                             data-message-id="@message.Id"
+                             data-sender-id="@message.SenderId">
+                        <div class="chat-message-meta">
+                            <strong>@message.SenderTeamName</strong>
+                            <span>@message.CreatedAt.ToString("HH:mm")</span>
+                        </div>
+                        <div class="chat-message-content">@message.Content</div>
+                        @if (message.IsMine)
+                        {
+                            <div class="chat-read-state">
+                                @(message.IsRead ? "읽음" : "안읽음")
+                            </div>
+                        }
+                    </article>
+                }
+            }
+        </div>
+
+        <form id="chatForm" class="chat-form">
+            <input id="chatMessageInput"
+                   type="text"
+                   class="chat-input"
+                   maxlength="500"
+                   autocomplete="off"
+                   placeholder="메시지를 입력하세요" />
+
+            <button type="submit" class="chat-send-button">
+                보내기
+            </button>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+}

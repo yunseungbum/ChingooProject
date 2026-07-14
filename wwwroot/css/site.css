@@ -14,7 +14,17 @@
     min-width: 0;
 }
 
+.navbar .container {
+    max-width: 1200px;
+}
+
 @media (max-width: 768px) {
+    .navbar .container {
+        max-width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
     .container.page-body {
         max-width: 100%;
         padding-left: 8px;

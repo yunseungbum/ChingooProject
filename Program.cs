@@ -9,6 +9,7 @@ using Chingoo.Services.Posts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Chingoo.Services.Youtube;
+using Chingoo.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // MVC
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
 
 // Services
 builder.Services.Configure<FootballDataOptions>(builder.Configuration.GetSection("FootballData"));
@@ -75,6 +77,8 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllers();
+
+app.MapHub<ChatHub>("/chatHub");
 
 app.MapControllerRoute(
     name: "default",
