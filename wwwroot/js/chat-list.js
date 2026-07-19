@@ -47,8 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const time = document.createElement("time");
         time.textContent = room.lastMessageAt ?? "";
 
+        const unread = document.createElement("span");
+        unread.className = `chat-room-unread ${room.unreadCount > 0 ? "is-visible" : ""}`;
+        unread.textContent = room.unreadCount ?? 0;
+
+        const side = document.createElement("div");
+        side.className = "chat-room-side";
+        side.append(time, unread);
+
         main.append(recipient, postTitle, lastMessage);
-        item.append(main, time);
+        item.append(main, side);
 
         return item;
     };

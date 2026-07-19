@@ -38,6 +38,7 @@ public class ChatHub : Hub
         {
             var readMessageIds = await MarkRoomMessagesAsReadAsync(roomId, userId);
             await NotifyMessagesReadAsync(roomId, userId, readMessageIds);
+            await NotifyUnreadChatCountAsync(userId);
         }
     }
 
@@ -49,6 +50,7 @@ public class ChatHub : Hub
         }
 
         await Groups.AddToGroupAsync(Context.ConnectionId, GetUserInboxGroupName(userId));
+        await NotifyUnreadChatCountAsync(userId);
     }
 
     public async Task SendMessageToRoom(int roomId, string message)
@@ -98,6 +100,8 @@ public class ChatHub : Hub
             .SendAsync("ReceiveMessage", senderName, content, sentAt, chatMessage.Id, senderId);
 
         await NotifyChatRoomUpdatedAsync(room, content, chatMessage.CreatedAt);
+        await NotifyUnreadChatCountAsync(room.PostOwnerId);
+        await NotifyUnreadChatCountAsync(room.ParticipantId);
     }
 
     public async Task MarkRoomAsRead(int roomId)
@@ -122,6 +126,7 @@ public class ChatHub : Hub
 
         var readMessageIds = await MarkRoomMessagesAsReadAsync(roomId, userId);
         await NotifyMessagesReadAsync(roomId, userId, readMessageIds);
+        await NotifyUnreadChatCountAsync(userId);
     }
 
     private bool CanAccessRoom(ChatRoom room)
@@ -210,13 +215,21 @@ public class ChatHub : Hub
     private async Task NotifyChatRoomUpdatedAsync(ChatRoom room, string lastMessage, DateTime lastMessageAt)
     {
         await Clients.Group(GetUserInboxGroupName(room.PostOwnerId))
-            .SendAsync("ChatRoomUpdated", BuildChatRoomListPayload(room, room.PostOwnerId, lastMessage, lastMessageAt));
+            .SendAsync(
+                "ChatRoomUpdated",
+                await BuildChatRoomListPayloadAsync(room, room.PostOwnerId, lastMessage, lastMessageAt));
 
         await Clients.Group(GetUserInboxGroupName(room.ParticipantId))
-            .SendAsync("ChatRoomUpdated", BuildChatRoomListPayload(room, room.ParticipantId, lastMessage, lastMessageAt));
+            .SendAsync(
+                "ChatRoomUpdated",
+                await BuildChatRoomListPayloadAsync(room, room.ParticipantId, lastMessage, lastMessageAt));
     }
 
-    private static object BuildChatRoomListPayload(ChatRoom room, int userId, string lastMessage, DateTime lastMessageAt)
+    private async Task<object> BuildChatRoomListPayloadAsync(
+        ChatRoom room,
+        int userId,
+        string lastMessage,
+        DateTime lastMessageAt)
     {
         return new
         {
@@ -226,7 +239,32 @@ public class ChatHub : Hub
                 : room.PostOwner.TeamName,
             postTitle = room.Post.Title,
             lastMessage,
-            lastMessageAt = lastMessageAt.ToString("MM.dd HH:mm")
+            lastMessageAt = lastMessageAt.ToString("MM.dd HH:mm"),
+            unreadCount = await CountUnreadChatMessagesAsync(room.Id, userId),
+            unreadTotalCount = await CountUnreadChatMessagesAsync(userId)
         };
+    }
+
+    private async Task NotifyUnreadChatCountAsync(int userId)
+    {
+        await Clients.Group(GetUserInboxGroupName(userId))
+            .SendAsync("UnreadChatCountUpdated", await CountUnreadChatMessagesAsync(userId));
+    }
+
+    private async Task<int> CountUnreadChatMessagesAsync(int userId)
+    {
+        return await _db.ChatMessages.CountAsync(x =>
+            x.SenderId != userId &&
+            x.ReadAt == null &&
+            (x.ChatRoom.PostOwnerId == userId ||
+             x.ChatRoom.ParticipantId == userId));
+    }
+
+    private async Task<int> CountUnreadChatMessagesAsync(int roomId, int userId)
+    {
+        return await _db.ChatMessages.CountAsync(x =>
+            x.ChatRoomId == roomId &&
+            x.SenderId != userId &&
+            x.ReadAt == null);
     }
 }

@@ -36,7 +36,12 @@
 
                     @if (room.LastMessageAt.HasValue)
                     {
-                        <time>@room.LastMessageAt.Value.ToString("MM.dd HH:mm")</time>
+                        <div class="chat-room-side">
+                            <time>@room.LastMessageAt.Value.ToString("MM.dd HH:mm")</time>
+                            <span class="chat-room-unread @(room.UnreadCount > 0 ? "is-visible" : "")">
+                                @room.UnreadCount
+                            </span>
+                        </div>
                     }
                 </a>
             }

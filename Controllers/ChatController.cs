@@ -46,6 +46,11 @@ public class ChatController : Controller
             .GroupBy(x => x.ChatRoomId)
             .ToDictionary(x => x.Key, x => x.First());
 
+        var unreadCountByRoomId = latestMessages
+            .Where(x => x.SenderId != currentUserId && x.ReadAt == null)
+            .GroupBy(x => x.ChatRoomId)
+            .ToDictionary(x => x.Key, x => x.Count());
+
         var model = new ChatListViewModel
         {
             CurrentUserId = currentUserId,
@@ -65,7 +70,10 @@ public class ChatController : Controller
                             : room.PostOwner.TeamName,
                         PostTitle = room.Post.Title,
                         LastMessage = latestMessage?.Content ?? "아직 메시지가 없습니다.",
-                        LastMessageAt = latestMessage?.CreatedAt ?? room.CreatedAt
+                        LastMessageAt = latestMessage?.CreatedAt ?? room.CreatedAt,
+                        UnreadCount = unreadCountByRoomId.TryGetValue(room.Id, out var unreadCount)
+                            ? unreadCount
+                            : 0
                     };
                 })
                 .Where(x => x != null)
@@ -164,6 +172,7 @@ public class ChatController : Controller
         }
 
         await MarkRoomMessagesAsReadAsync(room.Id, currentUserId);
+        await NotifyUnreadChatCountAsync(currentUserId);
 
         var recipientTeamName = room.PostOwnerId == currentUserId
             ? room.Participant.TeamName
@@ -221,6 +230,9 @@ public class ChatController : Controller
         _db.ChatRooms.Remove(room);
         await _db.SaveChangesAsync();
 
+        await NotifyUnreadChatCountAsync(room.PostOwnerId);
+        await NotifyUnreadChatCountAsync(room.ParticipantId);
+
         TempData["Message"] = "채팅방을 나갔습니다.";
         return RedirectToAction(nameof(Index));
     }
@@ -246,6 +258,18 @@ public class ChatController : Controller
         }
 
         await _db.SaveChangesAsync();
+    }
+
+    private async Task NotifyUnreadChatCountAsync(int userId)
+    {
+        var unreadCount = await _db.ChatMessages.CountAsync(x =>
+            x.SenderId != userId &&
+            x.ReadAt == null &&
+            (x.ChatRoom.PostOwnerId == userId ||
+             x.ChatRoom.ParticipantId == userId));
+
+        await _hubContext.Clients.Group(ChatHub.GetUserInboxGroupName(userId))
+            .SendAsync("UnreadChatCountUpdated", unreadCount);
     }
 
     private bool TryGetCurrentUserId(out int userId)

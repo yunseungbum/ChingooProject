@@ -174,11 +174,34 @@
     white-space: nowrap;
 }
 
-.chat-room-item time {
+.chat-room-side {
     flex: 0 0 auto;
+    display: grid;
+    justify-items: end;
+    gap: 6px;
+}
+
+.chat-room-item time {
     color: #94a3b8;
     font-size: 0.76rem;
     font-weight: 800;
+}
+
+.chat-room-unread {
+    display: none;
+    min-width: 21px;
+    height: 21px;
+    border-radius: 999px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 900;
+    line-height: 21px;
+    text-align: center;
+}
+
+.chat-room-unread.is-visible {
+    display: inline-block;
 }
 
 .chat-message {

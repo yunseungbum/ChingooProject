@@ -1,11 +1,30 @@
+@using System.Security.Claims
+@using Microsoft.EntityFrameworkCore
+@inject Chingoo.Data.AppDbContext Db
+
 @{
     var controller = ViewContext.RouteData.Values["controller"]?.ToString();
     var action = ViewContext.RouteData.Values["action"]?.ToString();
+    var unreadChatCount = 0;
 
     // Sidebar 숨길 페이지
     bool hideSidebar =
         controller == "Account" &&
         (action == "Login" || action == "Register");
+
+    if (User.Identity?.IsAuthenticated == true)
+    {
+        var currentUserIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (int.TryParse(currentUserIdValue, out var currentUserId))
+        {
+            unreadChatCount = await Db.ChatMessages.CountAsync(x =>
+                x.SenderId != currentUserId &&
+                x.ReadAt == null &&
+                (x.ChatRoom.PostOwnerId == currentUserId ||
+                 x.ChatRoom.ParticipantId == currentUserId));
+        }
+    }
 }
 
 <!DOCTYPE html>
@@ -49,11 +68,18 @@
 
             <div class="ms-auto">
 
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity?.IsAuthenticated == true)
                     {
                         <a asp-controller="Chat"
                            asp-action="Index"
                            class="nav-link-custom">
+                            <span class="chat-nav-alert" aria-label="안 읽은 채팅 알림">
+                                <span class="chat-nav-bell">&#128276;</span>
+                                <span id="chatNotificationBadge"
+                                      class="chat-notification-badge @(unreadChatCount > 0 ? "is-visible" : "")">
+                                    @unreadChatCount
+                                </span>
+                            </span>
                             채팅
                         </a>
 
@@ -136,6 +162,10 @@
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="~/js/modal.js" asp-append-version="true"></script>
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <script src="~/js/chat-notification.js" asp-append-version="true"></script>
+}
 
     @await RenderSectionAsync("Scripts", required: false)
 
