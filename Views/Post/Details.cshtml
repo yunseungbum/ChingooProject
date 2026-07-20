@@ -3,7 +3,10 @@
 @{
     var commentSort = ViewBag.CommentSort as string ?? "oldest";
     var currentUserIdValue = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-    var isPostAuthor = int.TryParse(currentUserIdValue, out var currentUserId) && currentUserId == Model.UserId;
+    var currentUserId = int.TryParse(currentUserIdValue, out var parsedCurrentUserId) ? parsedCurrentUserId : 0;
+    var isAdmin = User.Identity?.Name == "admin";
+    var isPostAuthor = currentUserId == Model.UserId;
+    var canManagePost = isPostAuthor || isAdmin;
     var allComments = ViewBag.Comments as List<Chingoo.Models.Comment> ?? new List<Chingoo.Models.Comment>();
     var comments = allComments.Where(x => x.ParentCommentId == null);
     comments = commentSort == "latest"
@@ -16,7 +19,7 @@
     <div class="card-body">
 
         <div class="d-flex justify-content-end gap-2 mb-3">
-        @if (isPostAuthor)
+        @if (canManagePost)
         {
                 <a asp-action="Edit"
                    asp-route-id="@Model.Id"
@@ -116,6 +119,19 @@
 
                     <div class="comment-content">@comment.Content</div>
 
+                    @if (isAdmin || comment.UserId == currentUserId)
+                    {
+                        <form asp-action="DeleteComment"
+                              method="post"
+                              class="d-inline"
+                              onsubmit="return confirm('댓글을 삭제하시겠습니까? 대댓글도 함께 삭제됩니다.');">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="postId" value="@Model.Id" />
+                            <input type="hidden" name="commentId" value="@comment.Id" />
+                            <button type="submit" class="comment-reply-toggle">삭제</button>
+                        </form>
+                    }
+
                     @if (isPostAuthor)
                     {
                         <button type="button"
@@ -142,6 +158,19 @@
                                         </div>
 
                                         <div class="comment-content">@reply.Content</div>
+
+                                        @if (isAdmin || reply.UserId == currentUserId)
+                                        {
+                                            <form asp-action="DeleteComment"
+                                                  method="post"
+                                                  class="d-inline"
+                                                  onsubmit="return confirm('댓글을 삭제하시겠습니까?');">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="postId" value="@Model.Id" />
+                                                <input type="hidden" name="commentId" value="@reply.Id" />
+                                                <button type="submit" class="comment-reply-toggle">삭제</button>
+                                            </form>
+                                        }
                                     </div>
                                 </article>
                             }

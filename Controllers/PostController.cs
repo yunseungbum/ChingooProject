@@ -197,12 +197,13 @@ namespace Chingoo.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
+            var isAdmin = User.Identity?.Name == "admin";
             var chatRooms = await _db.ChatRooms
-                .Where(x => x.PostId == id && x.PostOwnerId == userId)
+                .Where(x => x.PostId == id && (isAdmin || x.PostOwnerId == userId))
                 .Select(x => new ChatRoomCloseTarget(x.Id, x.PostOwnerId, x.ParticipantId))
                 .ToListAsync();
 
-            var deleted = await _postService.DeletePostAsync(id, userId);
+            var deleted = await _postService.DeletePostAsync(id, userId, isAdmin);
 
             if (!deleted)
             {
@@ -212,6 +213,30 @@ namespace Chingoo.Controllers
             await NotifyPostChatRoomsClosedAsync(chatRooms);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteComment(int postId, int commentId)
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var deleted = await _commentService.DeleteCommentAsync(
+                "Post",
+                postId,
+                commentId,
+                userId,
+                User.Identity?.Name == "admin");
+
+            if (!deleted)
+            {
+                return Forbid();
+            }
+
+            return RedirectToAction(nameof(Details), new { id = postId });
         }
 
         private async Task NotifyPostChatRoomsClosedAsync(IEnumerable<ChatRoomCloseTarget> chatRooms)

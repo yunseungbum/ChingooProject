@@ -180,5 +180,30 @@ namespace Chingoo.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteComment(int noticeId, int commentId)
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var deleted = await _commentService.DeleteCommentAsync(
+                "Notice",
+                noticeId,
+                commentId,
+                userId,
+                User.Identity?.Name == "admin");
+
+            if (!deleted)
+            {
+                return Forbid();
+            }
+
+            return RedirectToAction(nameof(Details), new { id = noticeId });
+        }
     }
 }

@@ -130,9 +130,9 @@ namespace Chingoo.Services.Posts
             return true;
         }
 
-        public async Task<bool> DeletePostAsync(int id, int userId)
+        public async Task<bool> DeletePostAsync(int id, int userId, bool isAdmin)
         {
-            var post = await _db.Posts.FirstOrDefaultAsync(x => x.Id == id && x.UserId == userId);
+            var post = await _db.Posts.FirstOrDefaultAsync(x => x.Id == id && (isAdmin || x.UserId == userId));
 
             if (post == null)
             {

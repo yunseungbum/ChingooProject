@@ -7,5 +7,6 @@ namespace Chingoo.Services.Comments
         Task<List<Comment>> GetCommentsAsync(string boardType, int boardId);
         Task<bool> ParentCommentExistsAsync(string boardType, int boardId, int parentCommentId);
         Task CreateCommentAsync(string boardType, int boardId, int userId, string content, int? parentCommentId);
+        Task<bool> DeleteCommentAsync(string boardType, int boardId, int commentId, int userId, bool isAdmin);
     }
 }

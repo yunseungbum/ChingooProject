@@ -8,5 +8,6 @@ namespace Chingoo.Services.Communities
         Task<CommunityPost?> GetPostAsync(int id);
         Task CreatePostAsync(CommunityPost communityPost, int userId);
         Task<bool> CanWriteReplyAsync(int communityPostId, int userId);
+        Task<bool> DeletePostAsync(int id, int userId, bool isAdmin);
     }
 }

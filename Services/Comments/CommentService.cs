@@ -44,5 +44,30 @@ namespace Chingoo.Services.Comments
             _db.Comments.Add(comment);
             await _db.SaveChangesAsync();
         }
+
+        public async Task<bool> DeleteCommentAsync(string boardType, int boardId, int commentId, int userId, bool isAdmin)
+        {
+            var comment = await _db.Comments
+                .FirstOrDefaultAsync(x =>
+                    x.Id == commentId &&
+                    x.BoardType == boardType &&
+                    x.BoardId == boardId &&
+                    (isAdmin || x.UserId == userId));
+
+            if (comment == null)
+            {
+                return false;
+            }
+
+            var replies = await _db.Comments
+                .Where(x => x.ParentCommentId == comment.Id)
+                .ToListAsync();
+
+            _db.Comments.RemoveRange(replies);
+            _db.Comments.Remove(comment);
+            await _db.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

@@ -43,5 +43,26 @@ namespace Chingoo.Services.Communities
 
             return post != null && post.UserId == userId;
         }
+
+        public async Task<bool> DeletePostAsync(int id, int userId, bool isAdmin)
+        {
+            var post = await _db.CommunityPosts
+                .FirstOrDefaultAsync(x => x.Id == id && (isAdmin || x.UserId == userId));
+
+            if (post == null)
+            {
+                return false;
+            }
+
+            var comments = await _db.Comments
+                .Where(x => x.BoardType == "Community" && x.BoardId == id)
+                .ToListAsync();
+
+            _db.Comments.RemoveRange(comments);
+            _db.CommunityPosts.Remove(post);
+
+            await _db.SaveChangesAsync();
+            return true;
+        }
     }
 }

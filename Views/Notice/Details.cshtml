@@ -10,6 +10,8 @@
         ? comments.OrderByDescending(x => x.CreatedAt)
         : comments.OrderBy(x => x.CreatedAt);
     var isNoticeAuthor = User.Identity?.Name == "admin";
+    var currentUserIdValue = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var currentUserId = int.TryParse(currentUserIdValue, out var parsedCurrentUserId) ? parsedCurrentUserId : 0;
 }
 
 <div class="card shadow-sm post-card">
@@ -97,6 +99,19 @@
 
                     <div class="comment-content">@comment.Content</div>
 
+                    @if (isNoticeAuthor || comment.UserId == currentUserId)
+                    {
+                        <form asp-action="DeleteComment"
+                              method="post"
+                              class="d-inline"
+                              onsubmit="return confirm('댓글을 삭제하시겠습니까? 대댓글도 함께 삭제됩니다.');">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="noticeId" value="@Model.Id" />
+                            <input type="hidden" name="commentId" value="@comment.Id" />
+                            <button type="submit" class="comment-reply-toggle">삭제</button>
+                        </form>
+                    }
+
                     @if (isNoticeAuthor)
                     {
                         <button type="button"
@@ -123,6 +138,19 @@
                                         </div>
 
                                         <div class="comment-content">@reply.Content</div>
+
+                                        @if (isNoticeAuthor || reply.UserId == currentUserId)
+                                        {
+                                            <form asp-action="DeleteComment"
+                                                  method="post"
+                                                  class="d-inline"
+                                                  onsubmit="return confirm('댓글을 삭제하시겠습니까?');">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="noticeId" value="@Model.Id" />
+                                                <input type="hidden" name="commentId" value="@reply.Id" />
+                                                <button type="submit" class="comment-reply-toggle">삭제</button>
+                                            </form>
+                                        }
                                     </div>
                                 </article>
                             }

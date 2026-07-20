@@ -109,6 +109,51 @@ namespace Chingoo.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var deleted = await _communityService.DeletePostAsync(id, userId, User.Identity?.Name == "admin");
+
+            if (!deleted)
+            {
+                return NotFound();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteComment(int communityPostId, int commentId)
+        {
+            if (!TryGetCurrentUserId(out var userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var deleted = await _commentService.DeleteCommentAsync(
+                "Community",
+                communityPostId,
+                commentId,
+                userId,
+                User.Identity?.Name == "admin");
+
+            if (!deleted)
+            {
+                return Forbid();
+            }
+
+            return RedirectToAction(nameof(Details), new { id = communityPostId });
+        }
+
         private bool TryGetCurrentUserId(out int userId)
         {
             var userIdValue = User.FindFirstValue(ClaimTypes.NameIdentifier);

@@ -12,7 +12,7 @@ namespace Chingoo.Services.Posts
         Task<bool> CanWriteReplyAsync(int postId, int userId);
         Task<PostCreateViewModel?> GetEditViewModelAsync(int id, int userId);
         Task<bool> UpdatePostAsync(int id, PostCreateViewModel model, int userId);
-        Task<bool> DeletePostAsync(int id, int userId);
+        Task<bool> DeletePostAsync(int id, int userId, bool isAdmin);
         PostManageViewModel GetManageViewModel(int userId, string filter);
     }
 }

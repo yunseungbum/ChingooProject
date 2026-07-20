@@ -10,12 +10,31 @@
         ? comments.OrderByDescending(x => x.CreatedAt)
         : comments.OrderBy(x => x.CreatedAt);
     var currentUserIdValue = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-    var isCommunityAuthor = int.TryParse(currentUserIdValue, out var currentUserId) && currentUserId == Model.UserId;
+    var currentUserId = int.TryParse(currentUserIdValue, out var parsedCurrentUserId) ? parsedCurrentUserId : 0;
+    var isAdmin = User.Identity?.Name == "admin";
+    var isCommunityAuthor = currentUserId == Model.UserId;
+    var canManageCommunity = isCommunityAuthor || isAdmin;
 }
 
 <div class="card shadow-sm post-card">
 
     <div class="card-body">
+
+        @if (canManageCommunity)
+        {
+            <div class="d-flex justify-content-end gap-2 mb-3">
+                <form asp-action="Delete"
+                      asp-route-id="@Model.Id"
+                      method="post"
+                      onsubmit="return confirm('게시글을 삭제하시겠습니까? 관련 댓글과 대댓글도 모두 삭제됩니다.');">
+                    @Html.AntiForgeryToken()
+
+                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                        삭제
+                    </button>
+                </form>
+            </div>
+        }
 
         <h3 class="mb-3">@Model.Title</h3>
 
@@ -77,6 +96,19 @@
 
                     <div class="comment-content">@comment.Content</div>
 
+                    @if (isAdmin || comment.UserId == currentUserId)
+                    {
+                        <form asp-action="DeleteComment"
+                              method="post"
+                              class="d-inline"
+                              onsubmit="return confirm('댓글을 삭제하시겠습니까? 대댓글도 함께 삭제됩니다.');">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="communityPostId" value="@Model.Id" />
+                            <input type="hidden" name="commentId" value="@comment.Id" />
+                            <button type="submit" class="comment-reply-toggle">삭제</button>
+                        </form>
+                    }
+
                     @if (isCommunityAuthor)
                     {
                         <button type="button"
@@ -103,6 +135,19 @@
                                         </div>
 
                                         <div class="comment-content">@reply.Content</div>
+
+                                        @if (isAdmin || reply.UserId == currentUserId)
+                                        {
+                                            <form asp-action="DeleteComment"
+                                                  method="post"
+                                                  class="d-inline"
+                                                  onsubmit="return confirm('댓글을 삭제하시겠습니까?');">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="communityPostId" value="@Model.Id" />
+                                                <input type="hidden" name="commentId" value="@reply.Id" />
+                                                <button type="submit" class="comment-reply-toggle">삭제</button>
+                                            </form>
+                                        }
                                     </div>
                                 </article>
                             }
