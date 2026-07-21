@@ -182,3 +182,19 @@
 .offcanvas {
     --bs-offcanvas-width: 280px;
 }
+
+/* 파란색 로그인 버튼 */
+.my-info-box .btn-primary {
+    border-color: #2f6fab;
+    background: #397fbd;
+    color: #fff;
+    font-weight: 700;
+}
+
+.my-info-box .btn-primary:hover,
+.my-info-box .btn-primary:focus {
+    border-color: #255c91;
+    background: #2f6fab;
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(57, 127, 189, 0.18);
+}

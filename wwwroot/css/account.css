@@ -43,6 +43,27 @@
     height: 42px;
     font-size: 15px;
     font-weight: 600;
+    border-color: #2f6fab;
+    background: #397fbd;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    border-color: #255c91;
+    background: #2f6fab;
+    box-shadow: 0 0 0 0.2rem rgba(57, 127, 189, 0.18);
+}
+
+.navbar .btn-outline-primary {
+    border-color: #397fbd;
+    color: #2f6fab;
+}
+
+.navbar .btn-outline-primary:hover,
+.navbar .btn-outline-primary:focus {
+    border-color: #2f6fab;
+    background: #397fbd;
+    color: #fff;
 }
 
 .text-danger,

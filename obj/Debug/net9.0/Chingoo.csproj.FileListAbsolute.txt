@@ -127,12 +127,7 @@ C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\Chingoo.pdb
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\Chingoo.genruntimeconfig.cache
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\ref\Chingoo.dll
 C:\Users\user\Desktop\ChingooProject\bin\Debug\net9.0\System.Text.Json.dll
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\qkyxcqx2p8-o3v9cys0hx.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\8o2cwqk2e3-8g9qbsffc8.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ao7ghmgev0-xzhklpne7x.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2u1rgf99pm-9g69fcpjk7.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\y3aefafmzy-tzwjj3yixd.gz
-C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\iiq0elrfpe-slq89enpkm.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\hl90kappil-61n19gt1b8.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2qp4lsenuz-qxfdc9mulo.gz
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\bti1ro8z7x-6qqggkr17o.gz
@@ -207,3 +202,8 @@ C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.bu
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Chingoo.props
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets.pack.json
 C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\qkyxcqx2p8-9282u14l8e.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\ao7ghmgev0-4t8ge7bmi8.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\2u1rgf99pm-12cduep9y4.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\y3aefafmzy-esymmrrpap.gz
+C:\Users\user\Desktop\ChingooProject\obj\Debug\net9.0\compressed\iiq0elrfpe-wosee71kx2.gz

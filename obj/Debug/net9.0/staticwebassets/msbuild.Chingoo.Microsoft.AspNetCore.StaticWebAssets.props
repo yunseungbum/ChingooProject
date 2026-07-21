@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>o3v9cys0hx</Fingerprint>
-      <Integrity>TOYQNUGkW2Pm4F/lXICqHG+qvl4Qy0pUmPAzt5a42HI=</Integrity>
+      <Fingerprint>9282u14l8e</Fingerprint>
+      <Integrity>r2i70Hebc3P+SUDHb/Bs7FktlTFKxkhQAH/vSFNlqyU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\account.css'))</OriginalItemSpec>
@@ -66,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>xzhklpne7x</Fingerprint>
-      <Integrity>HcGPGc8dJkk0fiHfLQgP61rbWhXV8Fjwngq873okcw0=</Integrity>
+      <Fingerprint>4t8ge7bmi8</Fingerprint>
+      <Integrity>mApOVaFOBvZJF3ilDa6YF7h56axjhPABQj3KKuuS82Q=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\home.css'))</OriginalItemSpec>
@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>9g69fcpjk7</Fingerprint>
-      <Integrity>6fd9/Gym7LM+/PT9gYvPwO2MUfH5PVYiaKmwrKDRm0Y=</Integrity>
+      <Fingerprint>12cduep9y4</Fingerprint>
+      <Integrity>t9t1pu/mvHLyVgsMmwE2Qe0R4f1pPg7aslxG0/RwSWM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\notice.css'))</OriginalItemSpec>
@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>tzwjj3yixd</Fingerprint>
-      <Integrity>N1N1VfdMdnWyalfptUTJ60S3JMWNfkhYUpuAXe8CAHo=</Integrity>
+      <Fingerprint>esymmrrpap</Fingerprint>
+      <Integrity>nmscSHHuogIZmNK6Mmfgk7KLZcZHuatCFVsj8jePkOw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\sidebar.css'))</OriginalItemSpec>
@@ -120,8 +120,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>slq89enpkm</Fingerprint>
-      <Integrity>sIks+w5rgDpwMPvSzAfceYKrByFscELDH5JJ6FkSOuQ=</Integrity>
+      <Fingerprint>wosee71kx2</Fingerprint>
+      <Integrity>QB3P329+F+y9KCZeGT6sHa+s2Kz69QkJlPZetD86YKM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -143,6 +143,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\chingoo-logo-header.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Chingoo</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Chingoo</BasePath>
+      <RelativePath>images/chingoo-logo-header.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>chfbu10owh</Fingerprint>
+      <Integrity>4FoSPMvd/f7uHHe9idV78RPlYd6cjYdw1dk4TmNFGA8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\chingoo-logo-header.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\chat.js'))">
       <SourceType>Package</SourceType>

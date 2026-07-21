@@ -1,5 +1,5 @@
 ﻿.notice-board {
-    border: 1px solid #dbe4ee;
+    border: 1px solid #bfd7f3;
     border-radius: 14px;
     background: #ffffff;
     overflow: hidden;
@@ -11,15 +11,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 14px 16px;
-    border-bottom: 1px solid #dbe4ee;
-    background: #f2f7fb;
+    border-bottom: 1px solid #bfd7f3;
+    background: #e4f0ff;
 }
 
     .notice-board-header h2 {
         margin: 0;
         font-size: 1rem;
         font-weight: 700;
-        color: #111827;
+        color: #174f8a;
     }
 
     .notice-board-header a {

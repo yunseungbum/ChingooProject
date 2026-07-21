@@ -144,6 +144,29 @@
     color: #8a4d0f;
 }
 
+/* 게시판형 홈 카드의 색상을 공지사항 헤더와 동일하게 통일 */
+.panel-match,
+.panel-mercenary,
+.panel-community,
+.panel-team {
+    border-color: #bfd7f3;
+}
+
+.panel-match .home-list-header,
+.panel-mercenary .home-list-header,
+.panel-community .home-list-header,
+.panel-team .home-list-header {
+    border-bottom-color: #bfd7f3;
+    background: #e4f0ff;
+}
+
+.panel-match .home-list-header h5,
+.panel-mercenary .home-list-header h5,
+.panel-community .home-list-header h5,
+.panel-team .home-list-header h5 {
+    color: #174f8a;
+}
+
 .home-list {
     display: flex;
     flex-direction: column;

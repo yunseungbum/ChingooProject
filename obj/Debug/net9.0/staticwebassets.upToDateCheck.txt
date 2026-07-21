@@ -76,6 +76,7 @@ wwwroot\css\notice.css
 wwwroot\css\sidebar.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\chingoo-logo-header.png
 wwwroot\js\chat.js
 wwwroot\js\chat-list.js
 wwwroot\js\chat-notification.js

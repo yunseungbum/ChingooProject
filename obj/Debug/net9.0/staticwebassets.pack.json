@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\images\\chingoo-logo-header.png",
+      "PackagePath": "staticwebassets\\images\\chingoo-logo-header.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ChingooProject\\wwwroot\\js\\chat-list.js",
       "PackagePath": "staticwebassets\\js\\chat-list.js"
     },
